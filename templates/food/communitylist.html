@@ -1,0 +1,86 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<!-- Search section -->
+
+<div class="communitylist">
+    <div class="list-section">
+        <div class="search-bar">
+            <form method="GET">
+                <input type="text" name="Search" class="search-box" placeholder="Search">
+                <input type="submit" value="submit">
+                
+            </form>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name (click on each for more info)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td class="table-link"><a href="{{ object.slug }}">{{ object.name | title }}</a></td>
+                    </tr>
+                <!-- If object_list is empty  -->
+                {% empty %}
+                    <tr>
+                        <td>No results found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+<div class="container">
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <nav>
+                <ul class="pagination justify-content-center" style="margin:20px 0">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                        <span>Prev</span>
+                    </a>
+                    </li>
+                {% else %}
+                    <li class="disabled page-item">
+                    <a class="page-link" href="#">
+                        <span>Prev</span>
+                    </a>
+                    </li>
+                {% endif %}
+
+                {% for page in page_range %}
+                    <li {% if page == page_obj.number %} class="active page-item" {% endif %}>
+                    <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                    </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                        <span>Next</span>
+                    </a>
+                    </li>
+                {% else %}
+                    <li {% if not page_obj.has_next %}class="disabled page-item"{% endif %}>
+                    <a class="page-link" href="#">
+                        <span>Next</span>
+                    </a>
+                    </li>
+                {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+            
+    </div>
+    </div>
+
+
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

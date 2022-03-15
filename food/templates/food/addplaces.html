@@ -1,0 +1,30 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+
+
+<form method="POST" action="">
+	{% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            <div>{{ hidden }}</div>
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            {% if field.errors %}
+                <ul>
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <p>{{ field.label_tag }}</p>
+            <p>{{ field }}</p>
+            {% if field.help_text %}
+                <p><small>{{ field.help_text }}</small></p>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" value="submit">Submit food</button>
+    </form>    
+
+{% endblock content %}

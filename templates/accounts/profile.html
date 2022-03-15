@@ -1,0 +1,23 @@
+{% extends "../base/main.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+{% include "../base/nav-main.html" %}
+<div class="profile-page">
+    <section class="jumbotron text-center bg-white">
+        <div class="container">
+            {% if user.is_authenticated %}
+            <h1>Hi, {{request.user|title}}</h1>
+            {% endif %}
+            <p class="lead text-muted">Welcome to your account</p>
+            <p>
+                <a href="{% url 'accounts:profile_detail' %}" class="btn btn-primary my-2">My Details</a>
+                <a href="{% url 'accounts:edit' %}" class="btn btn-primary my-2">Edit Details</a>
+                <a href="#" class="btn btn-primary my-2">Contact us</a>
+                <a href='{% url "logout" %}' class="btn btn-primary my-2">Logout</a>
+            </p>
+        </div>
+    </section>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

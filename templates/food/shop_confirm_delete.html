@@ -1,0 +1,18 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<div class="delete_page">
+        <form method="POST" class="delete-form">
+            {% csrf_token %}
+            <h1>Are you sure you want to delete <b>{{shop.name}}</b>? </h1>
+            <div class="header-bar">
+                <input class="button btn-primary" type="submit" value="Delete" />
+                <button class="btn-primary" ><a href="{% url 'food:food_list' %}">&#8592; Go Back</a></button>
+            </div>
+        </form>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

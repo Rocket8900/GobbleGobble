@@ -1,0 +1,39 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<div class="detail_view">
+
+<!-- 	<div class="go-back">
+		<button class="btn-primary"><a href="{% url 'food:community_list' %}">Back To Search Page</a></button>
+	</div> -->
+
+		<div class="detail_title">
+			<h3>{{ object.name | title }}</h3>
+		</div>
+
+	<div class="detail_page_info">
+
+			<ul class="detail_page_list">
+				<li>Address: {{ object.address }}</li>
+				<li>How do i get there?: <a href="{{object.directions}}" target="_blank" rel="noopener noreferrer"> Google Maps</a></li>
+				<li>Type of cuisine: {{ object.cuisine }}</li>
+				<li>Price: {{ object.price }}</li>
+				<li>Type of place: {{ object.type_of_food }}</li>
+				<li>Does the place open past 10pm: {{ object.late_hours|yesno:"Yes,No" }}</li>
+				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
+				<li>Description: {{ object.description }}</li>
+			</ul>
+			
+
+			{% if request.user.is_authenticated %}
+    			<button class="btn-primary"><a href="{% url 'food:save_to_me' shop.id %}">Add to my list </a></button>
+			{% endif %}
+			
+			
+	</div>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

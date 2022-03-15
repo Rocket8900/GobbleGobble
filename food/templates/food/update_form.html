@@ -1,0 +1,17 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<div class="update-form">
+    <form method="POST">
+        {% csrf_token %}
+        
+    <!-- form variable -->    
+     {{ form.as_p }} 
+
+      <input type="submit" name="sumbit">
+    </form>
+</div>
+{% include "base/footer.html" %}
+{% endblock content %}

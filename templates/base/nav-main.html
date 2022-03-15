@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+ 
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{% url 'food:home' %}">Placeholder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="{% static 'images/bars.png'%}" alt=""></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'food:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'food:explore' %}">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'food:search' %}">Search</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">            
+                     {% if not user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+                        </li>
+                        <li class="nav-item signcta">
+                            <a class="nav-link signcta" href="{% url 'accounts:register' %}">Register</a>
+                        </li>   
+                    {% endif %}            
+                    {% if user.is_authenticated %}
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{request.user|title}}
+                            </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href='{% url "accounts:profile" %}'>View profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href='{% url "logout" %}'>Logout</a></li>
+                                </ul>
+                        </div>
+                    {% endif %}                        
+                </ul>
+            </div>
+    </nav>
+
+
+</div>

@@ -1,0 +1,90 @@
+{% extends '../base/main.html' %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+{% if request.user.is_authenticated %}
+<script type="text/javascript">
+    window.location.href = '{% url "accounts:profile" %}'
+</script>
+{% endif %}
+
+<!-- <div class="card-body">
+    <form action="{% url 'accounts:login' %}" method="POST">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+        <div class="alert alert-primary" role="alert">
+            Error: Username or Password not correct!
+        </div>
+        {% endif %}
+
+        <label class="small font-weight-bold">{{ form.username.label}}</label>
+        {{ form.username}}
+
+        <label class="small font-weight-bold">{{ form.password.label}}</label>
+        {{ form.password}}
+
+        <button class="btn btn-dark btn-block py-2 mb-4 mt-5 font-weight-bold" type="submit"
+            value="Log-in">Sign in</button> -->
+
+<!--     </form>
+    <p>Forgot your password? <a href="{% url 'password_reset' %}">Register</a></p>
+    <p>Don't have an account? <a href="{% url 'accounts:register' %}">Register</a></p>
+</div> -->
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your username and password!</p>
+
+              <form action="{% url 'accounts:login' %}" method="POST">
+              {% csrf_token %}
+
+                      {% if form.errors %}
+        <div class="alert alert-primary" role="alert">
+            Error: Username or Password not correct!
+        </div>
+        {% endif %}
+
+              <div class="form-outline form-white mb-4">
+                <!-- <input type="email" id="typeEmailX" class="form-control form-control-lg" /> -->
+                <label class="form-label" for="typeEmailX">{{ form.username.label}}</label>
+                {{ form.username}}
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <!-- <input type="password" id="typePasswordX" class="form-control form-control-lg" /> -->
+                <label class="form-label" for="typePasswordX">{{ form.password.label }}</label>
+                {{ form.password }}
+              </div>
+
+              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
+          </form>
+
+            </div>
+
+            <div>
+              <p class="mb-0">Don't have an account? <a href="{% url 'accounts:register' %}" class="text-white-50 fw-bold">Sign Up</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% include "base/footer.html" %}
+{% endblock content %}

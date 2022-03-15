@@ -1,0 +1,37 @@
+{% extends "../base/main.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+{% include "../base/nav-main.html" %}
+
+<div class="view-profile">
+	<h1>Profile Details</h1>
+		<ul class="profile-list">
+			<li>
+				<div class="profile-detail">
+					<h2>Username:</h2>
+					<h3 class="lead text-muted">{{user.username | title}}</h3>
+				</div>
+			</li>
+			<li>
+				<div class="profile-detail">
+					<h2>Name:</h2>
+					<h3 class="lead text-muted">{{user.first_name | title}} {{user.last_name | title}}</h3>
+				</div>
+			</li>
+			<li>
+				<div class="profile-detail">
+					<h2>Email:</h2>
+					<h3 class="lead text-muted">{{user.email}}</h3>
+				</div>
+			</li>
+		</ul>
+
+		<div class="view-profilebuttons">
+			 <a href="{% url 'accounts:profile' %}" class="btn btn-primary my-2">&#8592; Go back</a>
+             <a href="{% url 'accounts:edit' %}" class="btn btn-primary my-2">Edit Profile</a>
+		</div>
+		<a href="{% url 'accounts:pwdforgot' %}" class="btn btn-primary my-2">Change My Password</a>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'food/main.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Whoa man idk what youre looking for</h2>
+<h3><a href="{% url 'food:food_list' %}">Go back to search for somewhere else</a></h3>
+
+{% endblock content %}

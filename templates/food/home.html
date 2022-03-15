@@ -1,0 +1,103 @@
+{% extends "../base/main.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% include "base/nav-main.html" %}
+<div class="header">
+	<div class="header-left">
+		<div class="header-wording">	
+			<h1>Hungry but lost?</h1>
+			<h2>Find somewhere to eat near you <br>in less than a minute!</h2>
+			<a class="header-search" href="{% url 'food:search' %}">Search</a>
+		</div>
+	</div>
+	<div class="header-right">
+		<img src="{% static 'images/homepage.jpg'%}" alt="">
+	</div>
+</div>
+
+<div class="filter">
+	<h1>Find exactly what you're craving for with these filters</h1>
+	<ul class="filter-list">
+		<li>Location
+			<img src="{% static 'images/location.png'%}" alt="">
+		</li>
+		<li>Distance
+			<img src="{% static 'images/distance.png'%}" alt="">
+		</li>
+		<li>Open past 11pm
+			<img src="{% static 'images/clock.png'%}" alt="">
+		</li>
+		<li>Price
+			<img src="{% static 'images/money.png'%}" alt="">
+		</li>
+		<li>Cuisine
+			<img src="{% static 'images/cuisine.png'%}" alt="">
+		</li>
+		<li>Type of location
+			<img src="{% static 'images/type.png'%}" alt="">
+		</li>
+		<li>Halal
+			<img src="{% static 'images/halal.png'%}" alt="">
+		</li>
+	</ul>
+	<ul class="filter-list-mobile">
+		<div class="mobile-row">
+			<li>Location
+				<img src="{% static 'images/location.png'%}" alt="">
+			</li>
+			<li>Distance
+				<img src="{% static 'images/distance.png'%}" alt="">
+			</li>
+		</div>
+
+		<div class="mobile-row">
+			<li>Open past 11pm
+				<img src="{% static 'images/clock.png'%}" alt="">
+			</li>
+			<li>Price
+				<img src="{% static 'images/money.png'%}" alt="">
+			</li>
+		</div>
+	
+		<div class="mobile-row">
+			<li>Cuisine
+				<img src="{% static 'images/cuisine.png'%}" alt="">
+			</li>
+			<li>Type of location
+				<img src="{% static 'images/type.png'%}" alt="">
+			</li>
+		</div>
+
+		<div class="mobile-row">
+			<li>Halal
+				<img src="{% static 'images/halal.png'%}" alt="">
+			</li>
+		</div>	
+	</ul>
+</div>
+
+<div class="save_account">
+	<h1>See somewhere that you want to eat at online?
+		<br>Never forget about it in 3 simple steps!</h1>
+	<ul class="save_account_list">
+		<li>Create an account</li>
+		<li class="arrow">
+			<img src="{% static 'images/arrow.png'%}" alt="">
+		</li>
+		<li>Save it in your account</li>
+		<li class="arrow">
+			<img src="{% static 'images/arrow.png'%}" alt="">
+		</li>
+		<li>Find it again when you want it the most!</li>
+	</ul>
+
+	<ul class="save_account_list_mobile">
+		<li>1. Create an account</li>
+		<li>2. Save it in your account</li>
+		<li>3. Find it again when you want it the most!</li>
+	</ul>
+</div>
+{% include "base/footer.html" %}
+{% endblock content %}

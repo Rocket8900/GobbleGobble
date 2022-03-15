@@ -1,0 +1,697 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"save",
+				"save_account_list_mobile"
+			],
+			[
+				"header",
+				"header-wording"
+			],
+			[
+				"space",
+				"space-around"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"siz",
+				"font-size"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"PAD",
+				"padding-bottom"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"li",
+				"list-style-type"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"PADD",
+				"padding-left"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"Pw",
+				"PwdResetConfirmForm"
+			],
+			[
+				"wid",
+				"widget"
+			],
+			[
+				"Type",
+				"TypeError"
+			],
+			[
+				"urlsa",
+				"urlsafe_base64_decode"
+			],
+			[
+				"urlsafe",
+				"urlsafe_base64_decode"
+			],
+			[
+				"url",
+				"urlsafe_base64_encode"
+			],
+			[
+				"force",
+				"force_bytes"
+			],
+			[
+				"h",
+				"HttpResponse"
+			],
+			[
+				"pass",
+				"password2"
+			],
+			[
+				"authentic",
+				"authentication_form"
+			],
+			[
+				"get_obje",
+				"get_object_or_404"
+			],
+			[
+				"cirle",
+				"circle"
+			],
+			[
+				"get",
+				"get_context_data"
+			],
+			[
+				"reverse",
+				"reverse_lazy"
+			],
+			[
+				"success",
+				"success_url"
+			],
+			[
+				"Foo",
+				"FoodListViewMixin"
+			],
+			[
+				"get_form",
+				"get_form_kwargs"
+			],
+			[
+				"location",
+				"location"
+			],
+			[
+				"templa",
+				"template_name"
+			],
+			[
+				"Point",
+				"point"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"load",
+				"load_data"
+			],
+			[
+				"obj",
+				"objType"
+			],
+			[
+				"car",
+				"cartItems"
+			],
+			[
+				"orde",
+				"orderItem"
+			],
+			[
+				"pro",
+				"productId"
+			],
+			[
+				"B",
+				"BASE_DIR"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "nashyseko/settings.py",
+			"settings":
+			{
+				"buffer_size": 4154,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert_snippet",
+					{
+						"contents": "'$0'"
+					},
+					"AQAAAE4DAAAAAAAAUAMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAATgMAAAAAAABOAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AQAAAE8DAAAAAAAAcAMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAATwMAAAAAAABPAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"left_delete",
+					null,
+					"AQAAAE8DAAAAAAAATwMAAAAAAAAIAAAAaHR0cHM6Ly8",
+					"AQAAAAAAAAABAAAATwMAAAAAAABXAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					12,
+					1,
+					"insert",
+					{
+						"characters": ","
+					},
+					"AQAAAGkDAAAAAAAAagMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAaQMAAAAAAABpAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					13,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGoDAAAAAAAAawMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAagMAAAAAAABqAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					14,
+					1,
+					"insert_snippet",
+					{
+						"contents": "'$0'"
+					},
+					"AQAAAGsDAAAAAAAAbQMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAawMAAAAAAABrAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"paste",
+					null,
+					"AQAAAGwDAAAAAAAAgQMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAbAMAAAAAAABsAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"left_delete",
+					null,
+					"AQAAAGwDAAAAAAAAbAMAAAAAAAAHAAAAaHR0cDovLw",
+					"AQAAAAAAAAABAAAAcwMAAAAAAABsAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					1,
+					"left_delete",
+					null,
+					"AQAAAHUDAAAAAAAAdQMAAAAAAAAFAAAAOjgwMDA",
+					"AQAAAAAAAAABAAAAdQMAAAAAAAB6AwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					1,
+					"insert",
+					{
+						"characters": "FALSE"
+					},
+					"BgAAADcDAAAAAAAAOAMAAAAAAAAAAAAAOAMAAAAAAAA4AwAAAAAAAAQAAABUcnVlOAMAAAAAAAA5AwAAAAAAAAAAAAA5AwAAAAAAADoDAAAAAAAAAAAAADoDAAAAAAAAOwMAAAAAAAAAAAAAOwMAAAAAAAA8AwAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANwMAAAAAAAA7AwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					26,
+					4,
+					"left_delete",
+					null,
+					"BAAAADsDAAAAAAAAOwMAAAAAAAABAAAARToDAAAAAAAAOgMAAAAAAAABAAAAUzkDAAAAAAAAOQMAAAAAAAABAAAATDgDAAAAAAAAOAMAAAAAAAABAAAAQQ",
+					"AQAAAAAAAAABAAAAPAMAAAAAAAA8AwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					27,
+					1,
+					"insert",
+					{
+						"characters": "alse"
+					},
+					"BAAAADgDAAAAAAAAOQMAAAAAAAAAAAAAOQMAAAAAAAA6AwAAAAAAAAAAAAA6AwAAAAAAADsDAAAAAAAAAAAAADsDAAAAAAAAPAMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAOAMAAAAAAAA4AwAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nikkiyeo/Desktop/pathfinder",
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko"
+	],
+	"file_history":
+	[
+		"/Users/nikkiyeo/Desktop/pathfinder/Procfile",
+		"/Users/nikkiyeo/Desktop/pathfinder/runtime.txt",
+		"/Users/nikkiyeo/Desktop/pathfinder/requirements.txt",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/views.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/static/css/main.css",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/food_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/community_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/addplaces.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/search.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitysearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodsearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/footer.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/nav-main.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/main.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/home.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/register.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/login.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/update.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_change_form.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/profile_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/delete.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/profile.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/accounts/views.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/accounts/urls.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/update_form.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/shop_confirm_delete.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/urls.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodlist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/shop_confirm_delete.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitylist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/foodlist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/forms.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/communitylist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/explore.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/food_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/foodsearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/accounts/forms.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/communitysearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/search.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_done.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_email.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_form.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_complete.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_confirm.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/logged_out.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/account_activation_email.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/login.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/activation_invalid.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/settings.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/accounts/token.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/urls.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/community_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/main.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/models.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/messages.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/errorfinding.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/500.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/404.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/deleteconfirm.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/utils.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/register.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/admin.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/static/css/search.css",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/widget.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/searchresults.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/static/js/google_maps.js",
+		"/Users/nikkiyeo/Desktop/pathfinder/static/js/main.js",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/migrations/0001_initial.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/pathfinder.sublime-project",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/forms.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/managers.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/mixins.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templatetags/food_tags.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/admin.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/models.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/urls.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/views.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templatetags/__init__.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/nashyseko.sublime-project",
+		"/Users/nikkiyeo/Desktop/Geocode/location/views.py",
+		"/Users/nikkiyeo/Desktop/Archived Projects/geoshops/geoshops.sublime-project",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/food/location_detail.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/planner/settings.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/food/main.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/planner/urls.py",
+		"/Users/nikkiyeo/Desktop/nashyseko/templates/base.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/food/main\\.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/food/home.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/planner/templates/base.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/food/location_index.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/static/css/main.css",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/location_index.html",
+		"/Users/nikkiyeo/Desktop/nashyseko/food/templates/base.html",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/admin.py",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/forms.py",
+		"/Users/nikkiyeo/Desktop/geoshops/shops/urls.py",
+		"/Users/nikkiyeo/Desktop/geoshops/static/js/scripts.js",
+		"/Users/nikkiyeo/Desktop/geoshops/geoshops.sublime-project",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/templates/shops/index.html",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/views.py",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/models.py",
+		"/Users/nikkiyeo/Desktop/geoshops/static/js/geoFindMe.js",
+		"/Users/nikkiyeo/Desktop/geoshops/shops/settings.py",
+		"/Users/nikkiyeo/Desktop/geoshops/nearbyshops/migrations/0002_auto_20210511_0100.py",
+		"/Users/nikkiyeo/Desktop/geoshops/static/js/location_picker.js",
+		"/Users/nikkiyeo/Desktop/geoshops/static/css/location_picker.css",
+		"/Users/nikkiyeo/Desktop/Figma/figma/website/urls.py",
+		"/Users/nikkiyeo/Desktop/Figma/figma/website/templates/website/store.html",
+		"/Users/nikkiyeo/Desktop/Figma/figma/static/css/main.css",
+		"/Users/nikkiyeo/Desktop/Figma/figma/figma/urls.py",
+		"/Users/nikkiyeo/Desktop/Figma/figma/website/views.py",
+		"/Users/nikkiyeo/Desktop/Figma/figma/figma/settings.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/views.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/cart.html",
+		"/Users/nikkiyeo/Desktop/dev/ljw/static/js/cart.js",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/main.html",
+		"/Users/nikkiyeo/Desktop/dev/ljw_sublime.sublime-project",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/urls.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/store.html",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/checkout.html",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/models.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/ljw/urls.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/ljw/settings.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/admin.py",
+		"/Users/nikkiyeo/Desktop/dev/ljw/static/css/main.css",
+		"/Users/nikkiyeo/Desktop/dev/ljw_sublime",
+		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/urls.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"des",
+			"price-column",
+			".header-wording",
+			"update",
+			"title",
+			"html",
+			" ;",
+			"Search",
+			"center",
+			"%;",
+			"auto",
+			";\n",
+			"faf6f4",
+			"35px",
+			";\n",
+			"4px",
+			"20px",
+			"auto",
+			"get_absolute",
+			"        {%",
+			"fromstr",
+			"render",
+			"request",
+			"submit",
+			"form",
+			"obj",
+			"variety"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "nashyseko/settings.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 646.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 50.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "pathfinder.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

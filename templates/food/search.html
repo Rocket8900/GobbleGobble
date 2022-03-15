@@ -1,0 +1,69 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<section class="search-page">
+    <div class="price-column">
+        <div class="price">My List</div>           
+        <div class="feature">        
+        Search through a list of places that you saved!
+        </div>      
+        <button class="cta"><a href="{% url 'food:food_list' %}">Search</a></button>
+        Note: Need to be a registered user to use this feature
+    </div>
+    <div class="price-column popular">      
+        <div class="price">Community List</div>            
+      <div class="feature">
+        Search through our carefully curated list!
+      </div>      
+      <button class="cta"><a href="{% url 'food:community_list' %}">Search</a></button>
+    </div>
+    <div class="price-column">
+      <div class="price-header">
+        <div class="price">          
+          Both Lists          
+        </div> 
+      </div>
+      <div class="feature">
+        Search with the community list and your own list as well!
+      </div>
+      <button class="cta">COMING SOON</button>
+    </div>
+</section>
+
+
+<!-- Mobile section -->
+
+<section class="search-page-mobile">
+    <div class="price-column popular">      
+        <div class="price">Community List</div>            
+      <div class="feature">
+        Search through our carefully curated list!
+      </div>      
+      <button class="cta"><a href="{% url 'food:community_list' %}">Search</a></button>
+    </div>
+    <div class="price-column">
+        <div class="price">My List</div>           
+        <div class="feature">        
+        Search through a list of places that you saved!
+        </div>      
+        <button class="cta"><a href="{% url 'food:food_list' %}">Search</a></button>
+        Note: Need to be a registered user to use this feature
+    </div>
+    <div class="price-column">
+      <div class="price-header">
+        <div class="price">          
+          Both Lists          
+        </div> 
+      </div>
+      <div class="feature">
+        Search with the community list and your own list as well!
+      </div>
+      <button class="cta">COMING SOON</button>
+    </div>
+</section>
+
+{% include "base/footer.html" %}
+{% endblock content %}
