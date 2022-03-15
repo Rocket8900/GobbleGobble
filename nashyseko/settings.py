@@ -85,16 +85,30 @@ RECAPTCHA_SECRET_KEY = '6LfUIjoeAAAAAAj0a20CoX8NHgMrg3dAadi-RpHs'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'food',
+#         'USER': 'foodadmin',
+#         'PASSWORD': 'foodpass',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'food',
-        'USER': 'foodadmin',
-        'PASSWORD': 'foodpass',
-        'HOST': 'localhost',
+        'NAME': 'd8q6p211rk6i9h',
+        'USER': 'cjzrdrvmbdkhll',
+        'PASSWORD': '84fb5d21ab5f0d2c69730623c0aa04adaad93f4c9f8a7ba3d0625f88e343c475',
+        'HOST': 'ec2-3-212-45-192.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
+
+
 
 
 # Password validation
