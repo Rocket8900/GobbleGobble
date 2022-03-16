@@ -86,6 +86,7 @@ class ShopForm(forms.Form):
     cuisine = forms.ChoiceField(required=False, choices=CUISINE_CHOICES)
     type_of_food = forms.ChoiceField(required=False, choices=TYPE_OF_FOOD_LOCATION_CHOICES)
     halal = forms.BooleanField(required=False, initial=False, label='Halal')
+    description = forms.CharField(required=False, label='Description', widget=forms.Textarea(attrs={"rows":5, "cols":20}))
 
     def get_point(self, address):
         outputFormat = 'json'

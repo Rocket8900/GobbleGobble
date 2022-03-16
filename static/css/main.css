@@ -684,6 +684,14 @@ body {
 	text-align: left;
 }
 
+.about-page {
+	display: flex;
+	background-color: #e5e5e5;
+	justify-content: center;
+	min-height: 100vh;
+	align-items: center;
+}
+
 .explore-page {
 	display: flex;
 	background-color: #e5e5e5;

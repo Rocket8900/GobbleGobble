@@ -45,6 +45,12 @@ def Search(request):
 def Error(request):
 	return render(request, 'food/errorfinding.html')
 
+def About(request):
+	return render(request, 'food/about.html')
+
+def Contact(request):
+	return render(request, 'food/contact.html')
+
 def is_valid_queryparam(param):
 	return param != '' and param is not None
 
@@ -480,6 +486,8 @@ class showform(LoginRequiredMixin, FormView):
 			type_of_food = self.request.POST['type_of_food']
 			type_of_food = Type_of_food.objects.get(variety=type_of_food)
 
+			description = self.request.POST['description']
+
 			directions = "http://maps.google.com/maps?z=12&t=m&q=loc:"+str(lat)+"+"+str(lon)
 
 			slug = "{name}-{randstr}".format(
@@ -487,7 +495,7 @@ class showform(LoginRequiredMixin, FormView):
 				randstr=random_string_generator(size=4)
 			)
 
-			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal)
+			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description)
 			ins.save()
 			# messages.add_message(self.request, messages.SUCCESS, "Todo added successfully")
 

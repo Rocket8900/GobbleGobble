@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('food/search/', views.Search, name='search'),
     path('food/explore/', views.Explore, name='explore'),
+    path('food/about/', views.About, name='about'),
+    path('food/contact/', views.Contact, name='contact'),
 
 	path('', views.Home, name='home'),
     path('food/<slug>/', FoodDetailView.as_view(), name='food_detail'),
