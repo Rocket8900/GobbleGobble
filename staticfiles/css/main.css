@@ -684,6 +684,38 @@ body {
 	text-align: left;
 }
 
+.about-page {
+	background-color: #e5e5e5;
+	min-height: 80vh;
+}
+
+.about-header {
+	padding-top: 2rem;
+	margin: auto;
+	width: 90%;
+}
+
+.about-header h1 {
+	text-align: center;
+	font-size: 3rem;
+	padding-bottom: 1.5rem;
+}
+
+.about-header h2 {
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+.about-cta {
+	text-align: center;
+}
+
+.about-cta a {
+	color: black;
+}
+
+
+
 .explore-page {
 	display: flex;
 	background-color: #e5e5e5;
