@@ -6,7 +6,7 @@
 <div class="form" id="formsearch">
         <div class="form-box ">
 
-            <h1 class="search-title">Search for food</h1>
+            <h1 class="search-title">Add a new place</h1>
 
             {% if form.non_field_errors %}
             <ul>
@@ -16,14 +16,17 @@
             </ul>
             {% endif %}
 
-            <form method="get
-            " action="{% url 'food:community_list' %}">
+            <form method="post" action="">
+            {% csrf_token %}
                 
+                <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typeEmailX">{{ form.name.label}}:</label>
+                    {{ form.name}}    
+                </div>
+
                 <div class="form-outline form-white mb-4">
                     <label class="form-label" for="typeEmailX">{{ form.address.label}}:</label>
                     {{ form.address}}    
-                    <label class="form-label" >{{ form.distance_limit.label }}:</label>
-                    {{ form.distance_limit}}
                 </div>
 
                 <div class="form-outline form-white mb-4">
@@ -48,17 +51,13 @@
                     {{ form.type_of_food }}     
                 </div>
 
-                <div class="form-outline form-white mb-4">
-                    <label class="form-label" >{{ form.randoming.label }}:</label>
-                    {{ form.randoming }}     
-                </div>
                  
-                <button class="btn-primary" type="submit" name="give_options" id="showTop">Search</button>
+                <button class="btn-primary" type="submit" name="give_options" id="showTop">Add Place</button>
             </form>    
         </div>
     </div>
 
-<form method="POST" action="">
+<!-- <form method="POST" action="">
 	{% csrf_token %}
         {% for hidden in form.hidden_fields %}
             <div>{{ hidden }}</div>
@@ -78,7 +77,7 @@
             {% endif %}
         {% endfor %}
         <button type="submit" value="submit">Submit food</button>
-    </form>    
+    </form>     -->
 
 {% include "base/footer.html" %}
 {% endblock content %}
