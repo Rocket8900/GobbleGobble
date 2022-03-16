@@ -89,7 +89,7 @@ class CommunityfullListView(ListView):
 	paginate_by = 10
 
 	def get_queryset(self):
-		queryset = super().get_queryset().filter(user='9')
+		queryset = super().get_queryset().filter(user='2')
 
 		search_input = self.request.GET.get('Search') or ''
 		print(search_input)
@@ -128,7 +128,7 @@ class CommunityListView(FormMixin, ListView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		
-		context['object_list'] = context['object_list'].filter(user='9')
+		context['object_list'] = context['object_list'].filter(user='2')
 
 
 		return context
@@ -208,7 +208,7 @@ class CommunityDetailView(FormMixin, DetailView):
 	def get (self, *args, **kwargs):
 		person = self.get_object().user.id
 		# print(person)
-		if person == 9:
+		if person == 2:
 			return super(CommunityDetailView, self).get(*args, **kwargs)
 		else:
 		 	return redirect('food:community_list')
@@ -301,9 +301,9 @@ class FoodDetailView(FormMixin, DetailView):
 		person = self.get_object().user.id
 		print(user)
 		print(person)
-		if person == 9:
-			print('nice person is 9')
-		if user == person or person == 9:
+		if person == 2:
+			print('nice person is 2')
+		if user == person or person == 2:
 			return super(FoodDetailView, self).get(*args, **kwargs)
 		else:
 			return redirect('food:food_list')
