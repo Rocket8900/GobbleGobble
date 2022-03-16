@@ -528,7 +528,7 @@ def contact(request):
 			try:
 				send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
 			except BadHeaderError:
-				return HttpResponse('Invalid header found.')
+				return HttpResponse('Invalid header found. Email failed to send')
 			return redirect ("food:home")
       
 	form = ContactForm()
