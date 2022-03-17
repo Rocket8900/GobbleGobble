@@ -54,6 +54,9 @@ def About(request):
 def Contact(request):
 	return render(request, 'food/contact.html')
 
+def Privacy(request):
+	return render(request, 'food/privacy.html')
+
 def is_valid_queryparam(param):
 	return param != '' and param is not None
 

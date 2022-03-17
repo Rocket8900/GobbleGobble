@@ -688,7 +688,7 @@ body {
 	display: flex;
 	background-color: #e5e5e5;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 80vh;
 	align-items: center;
 }
 

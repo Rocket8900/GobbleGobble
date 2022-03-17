@@ -364,10 +364,28 @@ body {
 	color: white;
 }
 
-.right-side li {
-	list-style-type: none;
+.right-side {
+	display: flex;
 }
 
+.right-side li {
+	list-style-type: none;
+	font-weight: 300;
+	font-size: 1rem;
+}
+
+.privacy_page {
+	width: 90%;
+	margin: auto;
+}
+
+.privacy_page h1{
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: 2rem;
+	font-weight: 900;
+}
 
 /* HEADER SECTION */
 
@@ -690,31 +708,25 @@ body {
 }
 
 .about-header {
-	padding-top: 2rem;
 	margin: auto;
-	width: 90%;
+	width: 80%;
 }
 
 .about-header h1 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	font-size: 2rem;
 	text-align: center;
-	font-size: 3rem;
-	padding-bottom: 1.5rem;
 }
 
 .about-header h2 {
-	text-align: center;
-	font-size: 1.3rem;
+	font-size: 1.6rem;
+	padding-bottom: 1rem;
 }
 
-.about-cta {
-	text-align: center;
-}
-
-.about-cta a {
+.about-header a {
 	color: black;
 }
-
-
 
 .explore-page {
 	display: flex;
