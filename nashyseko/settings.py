@@ -178,6 +178,14 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = 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
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
