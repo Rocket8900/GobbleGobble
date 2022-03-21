@@ -76,8 +76,10 @@ def edit(request):
 		user_form = UserEditForm(instance=request.user, data=request.POST)
 		if user_form.is_valid():
 			user_form.save()
+			print('nice its saved')
 	else:
 		user_form = UserEditForm(instance=request.user)
+		print('nope not saved')
 	return render(request, 'accounts/update.html', {'user_form':user_form})
 
 @login_required
