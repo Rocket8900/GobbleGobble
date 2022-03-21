@@ -176,18 +176,26 @@ LOGIN_REDIRECT_URL = 'accounts:profile'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = "SG.dP8Kp0SERrS7RC4XGyp6aA.LrNBB41SDJx21cMRK47YvFySRUUy6FcNvyirsfP4c7U"
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
-EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+
+# SENDGRID_API_KEY = os.getenv('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')
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+
+# ADMINS = (
+#     ('nashwyn', 'nashwyn02@gmail.com'),
+# )
+# MANAGERS = ADMINS
 
 
 if os.getcwd() == '/app':

@@ -519,6 +519,14 @@ def contact(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
+# 			send_mail(
+# 			'Subject here',
+# 			'Here is the message.',
+# 			'admin@hangrysloth.com',
+# 			['to@example.com'],
+# 			fail_silently=False,
+# )
+
 			subject = "Website Inquiry" 
 			body = {
 			'first_name': form.cleaned_data['first_name'], 
@@ -529,7 +537,7 @@ def contact(request):
 			message = "\n".join(body.values())
 
 			try:
-				send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
+				send_mail(subject, message, 'admin@hangrysloth.com', ['admin@hangrysloth.com']) 
 			except BadHeaderError:
 				return HttpResponse('Invalid header found. Email failed to send')
 			return redirect ("food:home")
