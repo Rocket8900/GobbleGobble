@@ -20,6 +20,7 @@ from django.contrib.gis import admin
 
 from food import views
 
+# handler403 = views.handler403
 handler404 = views.handler404
 handler500 = views.handler500
 

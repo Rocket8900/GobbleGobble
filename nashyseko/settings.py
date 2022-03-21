@@ -180,6 +180,8 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 SENDGRID_API_KEY = "SG.dP8Kp0SERrS7RC4XGyp6aA.LrNBB41SDJx21cMRK47YvFySRUUy6FcNvyirsfP4c7U"
 
+DEFAULT_FROM_EMAIL = 'HangrySloth Admin <admin@hangrysloth.com>'
+
 
 # SENDGRID_API_KEY = os.getenv('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')
 
