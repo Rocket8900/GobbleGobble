@@ -16,7 +16,7 @@ class SearchForm(forms.Form):
     
     CUISINE_CHOICES = (('Choose', 'Choose'), ('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
-        ('Japanese', 'Japanese'),('Italian', 'Italian'),('Vietnamese', 'Vietnamese'),('Others', 'Others'),)
+        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'),('Others', 'Others'),)
     
     TYPE_OF_FOOD_LOCATION_CHOICES = (('Choose', 'Choose'), ('Bar', 'Bar'),('Restaurant', 'Restaurant'),('Fast Food', 'Fast Food'),('Desert', 'Desert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
@@ -72,7 +72,7 @@ class ShopForm(forms.Form):
     PRICE_CHOICES = (('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
     CUISINE_CHOICES = (('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
-        ('Japanese', 'Japanese'),('Italian', 'Italian'),('Vietnamese', 'Vietnamese'),('Others', 'Others'),)
+        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'),('Others', 'Others'),)
     TYPE_OF_FOOD_LOCATION_CHOICES = (('Bar', 'Bar'),('Restaurant', 'Restaurant'),('Fast Food', 'Fast Food'),('Desert', 'Desert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
 
