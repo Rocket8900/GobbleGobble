@@ -1,0 +1,44 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+<div class="tags_page">
+
+<div class="tags_page_header">
+  <h1>List of tags</h1>
+    
+
+    <form method="GET">
+      <input type="text" name="Search" class="search-box" placeholder="Search">
+      <input type="submit" value="submit">        
+    </form>
+
+</div>
+
+<div id="individual_tag_list">
+        {% for tag in tags %}
+                {% if forloop.first %}<div  class="grid-sample-total-tags">{% endif %}
+                    <a href="/tag/{{ tag.slug }}" class="list-group-item list-group-item-action">{{ tag.name | title }}</a>
+                {% if forloop.second %}<div  class="grid-sample-total-tags">{% endif %}
+                {% if forloop.counter|divisibleby:columns %}
+                     </div><div  class="grid-sample-total-tags">
+        {% endif %}
+        {% if forloop.last %}</div>{% endif %} 
+        {% endfor %}
+    </div>
+
+
+<div id="individual_tag_list_mobile">
+  {% for tag in tags %}
+    <a href="/tag/{{ tag.slug }}" class="list-group-item list-group-item-action">{{ tag.name | title }}</a>
+  {% endfor %}
+</div>
+
+
+
+</div>
+
+
+{% include "base/footer.html" %}
+{% endblock content %}

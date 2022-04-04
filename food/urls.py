@@ -32,4 +32,8 @@ urlpatterns = [
     path('food-update/<slug>/', FoodUpdate.as_view(), name='food-update'),
     path('food-delete/<slug>/', DeleteView.as_view(), name='food-delete'),
     path('error/', views.Error, name='error'),
+
+    # path('tag/<slug:tag_slug>', views.shop_list, name='shop_by_tag'),
+    path('tag/<slug>', TagListView.as_view(), name='shop_by_tag'),
+    path('tags', TotalTags.as_view(), name='total_tags'),
     ]

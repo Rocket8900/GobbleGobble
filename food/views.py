@@ -27,12 +27,13 @@ from django.contrib.auth import login
 
 # from django.contrib import messages
 
-from .forms import SearchForm, ShopForm, ContactForm
+from .forms import SearchForm, ShopForm, ContactForm, TagForm
 from .models import shop, Cuisine, Price, Type_of_food
 from .utils import random_string_generator
 
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from taggit.models import Tag
 
 # GENERAL VIEWS
 
@@ -530,7 +531,7 @@ def contact(request):
 # 			fail_silently=False,
 # )
 
-			subject = "Website Inquiry" 
+			subject = "Website Inquiry" 	
 			body = {
 			'first_name': form.cleaned_data['first_name'], 
 			'last_name': form.cleaned_data['last_name'], 
@@ -548,6 +549,112 @@ def contact(request):
 	form = ContactForm()
 	return render(request, "food/contact.html", {'form':form})
 
+# def shop_list(request, tag_slug=None):
+# 	shop = shop.objects.all()
+# 	tag = None
+# 	if tag_slug:
+# 		tag=get_object_or_404(Tag, slug=tag_slug)
+# 		shop=shop.filter(tags__in=[tag])
+
+# 	return render(request,'food/shop_tag.html', {'shop':shop,'tag':tag})
 
 
+class TagMixin(object):
+	def get_context_data(self, **kwargs):
+		context = super(TagMixin, self).get_context_data(**kwargs)
+		context['tags'] = Tag.objects.all()
+
+		search_input = self.request.GET.get('Search') or ''
+
+		if search_input:
+			context['tags'] = context['tags'].filter(name__icontains=search_input)
+		return context
+
+class TagListView(FormMixin, ListView):
+	model = shop
+	form_class = TagForm
+	template_name = 'food/shop_tag.html'
+
+	def get_queryset(self):
+		return shop.objects.filter(tags__slug=self.kwargs.get('slug'))
+
+	def get_context_data(self, **kwargs):
+		name_of_slug = self.kwargs.get('slug')
+		context = super().get_context_data(**kwargs)
+		context['slug_tag'] = {'name_of_slug' : name_of_slug}
+		return context
+	    # check_for_zipcode = self.request.user.profile.location
+	    # context = super().get_context_data(**kwargs)
+	    # context['zipcodes'] = {'check_for_zipcode' : check_for_zipcode}
+	    # return context
+
+	def get(self, request, *args, **kwargs):
+		response = super().get(request, *args, **kwargs)
+		form = self.get_form()
+		if form.is_valid():
+			return self.form_valid(form)
+		else:
+			return self.form_invalid(form)
+
+		return response 
+
+	def get_form_kwargs(self):
+		kwargs = super().get_form_kwargs()
+		if self.request.method == 'GET' and self.request.GET:
+			kwargs['data'] = self.request.GET
+		# if 'random' in self.request.POST:
+		# 	print('this is random')
+		return kwargs
+
+	def form_valid(self, form):
+		kwargs = {
+			'query': form.cleaned_data['address'],
+		#	'radius': form.cleaned_data['Number_of_places_nearby'], 
+		}
+		point = form.get_point(kwargs['query'])
+		late_hours = self.request.GET.get('late_hours')
+		price = self.request.GET.get('price')
+		halal = self.request.GET.get('halal')
+		distance_limit = self.request.GET.get('distance_limit')
+
+
+		if point:
+			kwargs['point'] = point			
+			user_location = Point(point['longitude'], point['latitude'], srid=4326)
+			kwargs['object_list'] = super().get_queryset().annotate(distance=Distance(user_location,
+   'location')
+    ).order_by('distance')
+
+		else:
+			return redirect('food:error')
+		
+		if is_valid_queryparam(price) and price != 'Choose':
+			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
+
+		if late_hours == 'on':
+			kwargs['object_list'] = kwargs['object_list'].filter(late_hours=True)
+
+		if halal == 'on':
+			kwargs['object_list'] = kwargs['object_list'].filter(halal=True)
+
+		kwargs['object_list'] = kwargs['object_list'].filter(location__distance_lte=(user_location, D(km=distance_limit)))
+
+		kwargs['object_list'] = kwargs['object_list'].filter(tags__slug=self.kwargs.get('slug'))
+
+		print(kwargs['object_list'])
+				
+		kwargs['object_list'] = kwargs['object_list']
+		return self.render_to_response(self.get_context_data(**kwargs))
+
+
+class TotalTags(TagMixin, ListView):
+	model = shop
+	template_name = 'food/total_tags.html'
+
+	
+
+
+	# def get_context_data(self, **kwargs):
+	# 	context = super().get_context_data(**kwargs)
+	# 	context['object_list'] = context['object_list'].filter(shop.tags)
 

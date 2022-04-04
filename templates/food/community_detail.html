@@ -16,6 +16,11 @@
 	<div class="detail_page_info">
 
 			<ul class="detail_page_list">
+				<li>
+					{% for tag in object.tags.all %}
+					<a href="/tag/{{ tag.slug }}" >{{ tag.name | title }}</a>
+					{% endfor %}
+				</li>
 				<li>Address: {{ object.address }}</li>
 				<li>How do i get there?: <a href="{{object.directions}}" target="_blank" rel="noopener noreferrer"> Google Maps</a></li>
 				<li>Type of cuisine: {{ object.cuisine }}</li>

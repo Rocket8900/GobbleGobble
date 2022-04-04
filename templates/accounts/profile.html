@@ -12,8 +12,11 @@
             <p>
                 <a href="{% url 'accounts:profile_detail' %}" class="btn btn-primary my-2">My Details</a>
                 <a href="{% url 'accounts:edit' %}" class="btn btn-primary my-2">Edit Details</a>
-                <a href="#" class="btn btn-primary my-2">Contact us</a>
+                <a href="{% url 'food:contact' %}" class="btn btn-primary my-2">Contact us</a>
                 <a href='{% url "logout" %}' class="btn btn-primary my-2">Logout</a>
+            </p>
+            <p>
+                <a href="{% url 'food:addition' %}" class="btn btn-primary my-2">Add a new place to your private list</a>
             </p>
         </div>
     </section>

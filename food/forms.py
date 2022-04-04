@@ -110,6 +110,50 @@ class ShopForm(forms.Form):
                     return {}
             return {}
 
+class TagForm(forms.Form):
+
+    address = forms.CharField(label='Location', widget=forms.TextInput(attrs={
+        'class' 'form-control mb-3'
+        'placeholder': 'Any address, postal code, etc.',
+        'type': 'search',
+    }))
+
+    distance_limit = forms.IntegerField(min_value=1, max_value=45, label='Distance', widget=forms.NumberInput(attrs={
+        'class' 'form-control mb-3'
+        'placeholder': 'How far are you willing to go?',
+    }))
+
+    PRICE_CHOICES = (('Choose', 'Choose'), ('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
+
+    price = forms.ChoiceField(required=False, choices=PRICE_CHOICES)
+
+    late_hours = forms.BooleanField(required=False, initial=False, label='Open after 11pm')
+
+    halal = forms.BooleanField(required=False, initial=False, label='Halal')
+
+    def get_point(self, address):
+        outputFormat = 'json'
+        parameters = urllib.parse.urlencode({
+            'address': address + 'singapore',
+            'key': settings.GOOGLE_API_KEY,
+        })
+        url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
+        with urllib.request.urlopen(url) as response:
+            body = json.loads(response.read().decode('utf-8'))
+            if body['status'] == 'OK':
+                try:
+                    return {
+                        'latitude': body['results'][0]['geometry']['location']['lat'],
+                        'longitude': body['results'][0]['geometry']['location']['lng'],
+                        'formatted_address': body['results'][0]['formatted_address'],
+                    }
+                except KeyError:
+                    return {}
+                except IndexError:
+                    return {}
+            return {}
+
+
 class ContactForm(forms.Form):
     first_name = forms.CharField(max_length = 50)
     last_name = forms.CharField(max_length = 50)

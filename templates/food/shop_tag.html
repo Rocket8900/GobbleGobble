@@ -1,0 +1,180 @@
+{% extends "../base/main.html" %}
+{% load static %}
+{% block content %}
+{% include "base/nav-main.html" %}
+
+
+
+<div class="shop_tag_page">
+    <div class="shop_tag_page_header">
+        <h1>{{ slug_tag.name_of_slug | title }}</h1>
+        <button type="button" class="btn btn-secondary" onclick="showDiv()">Find the nearest to you</button>
+    </div>
+
+    <script>
+        function showDiv() {
+        document.getElementById('formsearching').style.display = "block";
+        }
+    </script>
+
+    <div class="form tag_page" id="formsearching">
+        <div class="form-box ">
+            {% if form.non_field_errors %}
+            <ul>
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="" method="GET">
+                {{ form }}
+                <input type='submit' value='Search'/>
+            </form>
+        </div>
+    </div>
+
+    {% if query %}
+        <script>
+            document.getElementById("formsearching").style.display = "none";
+            document.getElementById("shop_tag_list").style.display = "none";
+        </script>
+        <div class="community-search-results">
+            <div class="search-query">
+                <h2>Search Results</h2>
+                <h5>{{ object_list|length }} food location(s) available from your location of: <a href="https://www.google.com/maps/?q={{ point.formatted_address|urlencode }}">{{ point.formatted_address }}</a> (ordered by distance from you)</h5>
+            </div>
+        
+            <div class="commmuity-bottom-half"> 
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+               integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+               crossorigin=""/>
+
+                <!-- Leaflet JS -->
+                <!-- Make sure you put this AFTER Leaflet's CSS -->
+                <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                crossorigin=""></script>
+
+                <!-- Set map height -->
+                <style>
+                    #mapid { height: 500px; }
+                </style>
+
+                <div id="mapid"></div>
+                    <!-- map js  -->
+                    <script>
+                        var map = L.map('mapid').setView([{{ point.latitude }}, {{ point.longitude }}], 20);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+
+                        map.scrollWheelZoom.disable()
+                        map.on('click', function() {
+                            if (map.scrollWheelZoom.enabled()) {
+                            map.scrollWheelZoom.disable();
+                            }
+                            else {
+                            map.scrollWheelZoom.enable();
+                            }
+                        });
+
+                        var start = L.circleMarker([{{ point.latitude }}, {{ point.longitude }}], {
+                            color: 'white',
+                            fillColor: 'blue',
+                            fillOpacity: 1,
+                            radius: 10
+                        }).addTo(map);
+
+                        {% for obj in object_list %}
+                        var locy = {{ obj.location.y }} + (Math.random() -.5) / 3500;//
+                        var locx = {{ obj.location.x }} + (Math.random() -.5) / 3500;//
+                        var circle = L.marker([locy , locx], {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5,
+                          radius: 200
+                        })
+                        // var existingMarker = circle[obj];
+                        // var pos = existingMarker.getposition()
+                        circle.addTo(map);
+                        var myFeatureGroup = L.featureGroup().addTo(map).on("click", groupClick);
+                        var marker, test;
+                        for (var i = 0; i < 20; i += 1) {
+                        // marker = L.marker([{{ obj.location.y }}, {{ obj.location.x }}])
+                        // pos = marker.getposition()
+                        // if (circle.equals(pos)) {
+                        //     var newLat = circle.lat() + (Math.random() -.5) / 1500;// * (Math.random() * (max - min) + min);
+                        //     var newLng = circle.lng() + (Math.random() -.5) / 1500;//
+                        //     finalLatLng = circle.addTo(map);
+                        // }
+                        test = + i;
+                        marker = L.marker([locy,locx]).addTo(myFeatureGroup).bindPopup("{{ obj.name | title }}" );
+                        marker.test = test;
+                        }
+                        function groupClick(event) {
+                        console.log("Clicked on marker " + event.layer.test);
+                        }
+                        {% endfor %}            
+                    </script>
+
+                <p>Note: Points are displaced from their original position slightly to ensure no overlapping. If any points are overlapping, just refresh!</p>
+                <ul>
+                    {% for objs in object_list %}
+                        <li class="community_object_list">
+                            <a href="{{ objs.slug }}">{{ objs.name | title }}</a> 
+                        </li>
+                    {% endfor %}
+                </ul> 
+            </div>
+        </div>
+    
+    {% else %}
+    
+    {% endif %}
+
+    <div id="shop_tag_list">
+        {% for object in object_list %}
+                {% if forloop.first %}<div  class="grid-sample-total-tags">{% endif %}
+                    <a href="/communitylist/{{ object.slug }}" class="list-group-item list-group-item-action">{{ object.name | title }}</a>
+                {% if forloop.second %}<div  class="grid-sample-total-tags">{% endif %}
+                {% if forloop.counter|divisibleby:columns %}
+                     </div><div  class="grid-sample-total-tags">
+        {% endif %}
+        {% if forloop.last %}</div>{% endif %} 
+        {% endfor %}
+    </div>
+
+    {% if query %}
+        <script>
+            document.getElementById("shop_tag_list").style.display = "none";
+        </script>
+    {% endif %}
+
+<!--     {% for object in object_list %}
+        <a href="/food/{{ object.slug }}">{{ object.name | title }}</a>
+    {% endfor %}  -->
+
+
+
+    <div id="shop_tag_list_mobile">
+        {% for object in object_list %}
+            <a href="/communitylist/{{ object.slug }}" class="list-group-item list-group-item-action">{{ object.name | title }}</a>
+        {% endfor %}
+    </div>
+
+    {% if query %}
+        <script>
+            document.getElementById("shop_tag_list_mobile").style.display = "none";
+        </script>
+    {% endif %}
+
+<!--     {% for object in object_list %}
+        <a href="/food/{{ object.slug }}">{{ object.name | title }}</a>
+    {% endfor %}  -->
+
+    </div>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %}

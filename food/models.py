@@ -5,8 +5,24 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import random_string_generator
+from taggit.managers import TaggableManager
 
+# WEEKDAYS = [
+#     (1, ("Monday")),
+#     (2, ("Tuesday")),
+#     (3, ("Wednesday")),
+#     (4, ("Thursday")),
+#     (5, ("Friday")),
+#     (6, ("Saturday")),
+#     (7, ("Sunday")),
+#  ]
+# class OpeningTime(models.Model):
 
+#     weekday = models.IntegerField(
+#         choices=WEEKDAYS,
+#         unique=True)
+#     from_hour = models.TimeField()
+#     to_hour = models.TimeField()
 
 class Cuisine(models.Model):
 	options = models.CharField(max_length=100)
@@ -40,6 +56,8 @@ class shop(models.Model):
 	late_hours= models.BooleanField('Opens After 11pm', default=False)
 	directions = models.CharField(max_length=100, blank = True)
 	halal = models.BooleanField('Halal', default=False)
+	# opening_times = models.ManyToManyField(OpeningTime)
+	tags = TaggableManager()
 
 
 	class Meta:
