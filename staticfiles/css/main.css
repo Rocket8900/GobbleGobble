@@ -431,7 +431,7 @@ color: black;
 }
 
 .detail_view_li {
-	padding-top: 0.4rem;
+	padding-top: 0.8rem;
 	display: flex;
 	align-items: center;
 	max-width: 95%;
