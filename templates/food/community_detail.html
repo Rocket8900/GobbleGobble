@@ -26,17 +26,98 @@
 				<li>Type of cuisine: {{ object.cuisine }}</li>
 				<li>Price: {{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
-				<li>Does the place open past 10pm: {{ object.late_hours|yesno:"Yes,No" }}</li>
+				<li>Does the place open past 11pm: {{ object.late_hours|yesno:"Yes,No" }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
-				<li>Description: {{ object.description }}</li>
+				<li>{{ object.description | linebreaks  }}</li>
 			</ul>
 			
-
 			{% if request.user.is_authenticated %}
     			<button class="btn-primary"><a href="{% url 'food:save_to_me' shop.id %}">Add to my list </a></button>
 			{% endif %}
+						
+	</div>
+</div>
+
+<div class="detail_view_mobile">
+
+	<div class="detail_title">
+		<h3>{{ object.name | title }}</h3>
+	</div>
+
+	<div class="detail-mobile-map">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+           crossorigin=""/>
+
+        <!-- Leaflet JS -->
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin="">          
+        </script>
+
+		<style>
+        #mapid { height: 300px; }
+    	</style>
+
+            <div id="mapid"></div>
+                <!-- map js  -->
+                <script>
+                    var map = L.map('mapid').setView([{{ object.location.y }}, {{ object.location.x }}], 20);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    map.scrollWheelZoom.disable()
+                    map.on('click', function() {
+                        if (map.scrollWheelZoom.enabled()) {
+                        map.scrollWheelZoom.disable();
+                        }
+                        else {
+                        map.scrollWheelZoom.enable();
+                        }
+                    });
+
+                    var start = L.marker([{{ object.location.y }}, {{ object.location.x }}], {
+                        color: 'red',
+                        fillColor: '#f03',
+                        fillOpacity: 0.5,
+                      radius: 200
+                    }).addTo(map);
+            
+                </script>
+	</div>
+	
+
+	<div class="detail_page_info">
+
+			<ul class="detail_page_list">
+
+				<li class="detail_view_li"> Location : {{ object.address }}</li>
+				<li>How do i get there?: <a href="{{object.directions}}" target="_blank" rel="noopener noreferrer"> Google Maps</a></li>
+				<li>Type of cuisine: {{ object.cuisine }}</li>
+				<li>Price: {{ object.price }}</li>
+				<li>Type of place: {{ object.type_of_food }}</li>
+				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
+				<li>{{ object.description | linebreaks  }}</li>	
+				<li>See also: <br> 
+					<div class="tag-buttons">
+						{% for tag in object.tags.all %}
+						
+							<a href="/tag/{{ tag.slug }}" class="btn btn-primary my-2 btn-sm" >{{ tag.name | title }}</a>
+						
+						{% endfor %}
+					</div>
+				</li>
+				
+			</ul>
+
 			
-			
+			{% if request.user.is_authenticated %}
+    			<button class="btn-primary"><a href="{% url 'food:save_to_me' shop.id %}">Add to my list </a></button>
+			{% endif %}
+						
 	</div>
 </div>
 
