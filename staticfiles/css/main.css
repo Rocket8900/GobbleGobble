@@ -20,6 +20,7 @@
 
   .header-left {
   	width: 100% !important;
+  	min-height: 50vh !important;
   	text-align: center;
   }
 
@@ -42,6 +43,7 @@
 .filter-list-mobile {
 	display: list-item !important;
 	max-width: 95%;
+	list-style-type: none;
 }
 
 .mobile-row {
@@ -55,7 +57,11 @@
 	width: 50% !important;
 	text-align: center;
 	padding: 1.5rem 0;
+}
 
+.mobile-row li a {
+text-decoration: none;
+color: black;
 }
 
 .mobile-row li img {
@@ -319,6 +325,92 @@
 	text-align: center;
 }
 
+.about-page {
+	padding: 0 1rem;
+	display: flex;
+	background-color: #e5e5e5;
+	justify-content: center;
+	min-height: 80vh;
+	align-items: center;
+	text-align: center;
+}
+
+.about-header h1 {
+	font-size: 2rem !important;
+	padding-bottom: 1rem !important;
+}
+
+.about-header h2 {
+	font-size: 1.2rem !important;
+	padding-bottom: 1rem !important;
+}
+
+.about-cta {
+	font-size: 0.8rem !important;
+}
+
+.contact-page {
+	padding: 1rem !important;
+}
+
+.contact-page h1 {
+	text-align: center !important;
+}
+
+.communitylist {
+	background-color: #e5e5e5;
+	min-height: 90vh !important;
+	padding-top: 10px;
+}
+
+.list-section {
+	background-color: #f5f5f5;
+	padding-top: 9px;
+	width: 100% !important;
+	margin: 0 !important;
+	min-height: 80vh;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.search-bar {
+	display: flex;
+	margin: auto;
+	width: 50% !important;
+	justify-content: center;
+}
+
+.search-form-top {
+	display: flex;
+}
+
+.search-box {
+}
+
+.table-link a{
+	text-decoration: none;
+	color: black;
+}
+
+.table {
+	width: 100% !important;
+}
+
+.addition-button-div {
+	padding-bottom: 1rem !important;
+}
+
+.addition-button {
+	width: 50% !important;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -450,7 +542,7 @@ body {
 }
 
 .header-search {
-	background-color: #e60932;
+	background-color: #f04363;
 	border: none;
   	color: white;
 	padding: 10px 30px;
@@ -461,6 +553,13 @@ body {
 	margin: 8px 2px;
 	border-radius: 12px;
 }
+
+.header-search:hover {
+	background-color: #d9415d;
+	color: black;
+}
+
+.button:hover {background-color: #3e8e41}
 
 /* HOMEPAGE FILTERS */
 
@@ -489,7 +588,11 @@ body {
 	border-right: 1px solid black;
 	width: 14%;
 	text-align: center;
+}
 
+.filter-list li a {
+text-decoration: none;
+color: black;
 }
 
 .filter-list li img {
