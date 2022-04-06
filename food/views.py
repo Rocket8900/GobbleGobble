@@ -192,7 +192,7 @@ class CommunityListView(FormMixin, ListView):
 		else:
 			return redirect('food:error')
 		
-		if is_valid_queryparam(price) and price != 'Choose':
+		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
 
 		if late_hours == 'on':
@@ -201,10 +201,10 @@ class CommunityListView(FormMixin, ListView):
 		if halal == 'on':
 			kwargs['object_list'] = kwargs['object_list'].filter(halal=True)
 
-		if is_valid_queryparam(cuisine) and cuisine != 'Choose':
+		if is_valid_queryparam(cuisine) and cuisine != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(cuisine__options=cuisine)
 
-		if is_valid_queryparam(type_of_food) and type_of_food != 'Choose':
+		if is_valid_queryparam(type_of_food) and type_of_food != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(type_of_food__variety=type_of_food)
 
 		kwargs['object_list'] = kwargs['object_list'].filter(location__distance_lte=(user_location, D(km=distance_limit)))
@@ -409,7 +409,7 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		else:
 			return redirect('food:error')
 		
-		if is_valid_queryparam(price) and price != 'Choose':
+		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
 
 		if late_hours == 'on':
@@ -418,10 +418,10 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		if halal == 'on':
 			kwargs['object_list'] = kwargs['object_list'].filter(halal=True)
 
-		if is_valid_queryparam(cuisine) and cuisine != 'Choose':
+		if is_valid_queryparam(cuisine) and cuisine != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(cuisine__options=cuisine)
 
-		if is_valid_queryparam(type_of_food) and type_of_food != 'Choose':
+		if is_valid_queryparam(type_of_food) and type_of_food != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(type_of_food__variety=type_of_food)
 
 
@@ -628,7 +628,7 @@ class TagListView(FormMixin, ListView):
 		else:
 			return redirect('food:error')
 		
-		if is_valid_queryparam(price) and price != 'Choose':
+		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
 
 		if late_hours == 'on':
@@ -650,9 +650,6 @@ class TagListView(FormMixin, ListView):
 class TotalTags(TagMixin, ListView):
 	model = shop
 	template_name = 'food/total_tags.html'
-
-	
-
 
 	# def get_context_data(self, **kwargs):
 	# 	context = super().get_context_data(**kwargs)

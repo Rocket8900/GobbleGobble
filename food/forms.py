@@ -12,13 +12,13 @@ MINIMUM_NUMBER_OF_PLACES = 1  # kilometers
 
 class SearchForm(forms.Form):
     
-    PRICE_CHOICES = (('Choose', 'Choose'), ('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
+    PRICE_CHOICES = (('Any', 'Any'), ('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
     
-    CUISINE_CHOICES = (('Choose', 'Choose'), ('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
+    CUISINE_CHOICES = (('Any', 'Any'), ('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
         ('Japanese', 'Japanese'),('Italian', 'Italian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'),('Others', 'Others'),)
     
-    TYPE_OF_FOOD_LOCATION_CHOICES = (('Choose', 'Choose'), ('Bar', 'Bar'),('Restaurant', 'Restaurant'),('Fast Food', 'Fast Food'),('Desert', 'Desert'),
+    TYPE_OF_FOOD_LOCATION_CHOICES = (('Any', 'Any'), ('Bar', 'Bar'),('Restaurant', 'Restaurant'),('Fast Food', 'Fast Food'),('Desert', 'Desert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
 
 
@@ -28,7 +28,7 @@ class SearchForm(forms.Form):
         'type': 'search',
     }))
 
-    distance_limit = forms.IntegerField(min_value=1, max_value=45, label='Distance', widget=forms.NumberInput(attrs={
+    distance_limit = forms.IntegerField(min_value=1, max_value=45, initial=5, label='How far are you willing to travel (km)', widget=forms.NumberInput(attrs={
         'class' 'form-control mb-3'
         'placeholder': 'How far are you willing to go?',
     })) 
@@ -118,12 +118,12 @@ class TagForm(forms.Form):
         'type': 'search',
     }))
 
-    distance_limit = forms.IntegerField(min_value=1, max_value=45, label='Distance', widget=forms.NumberInput(attrs={
+    distance_limit = forms.IntegerField(min_value=1, max_value=45, initial=5, label='How far away (km)', widget=forms.NumberInput(attrs={
         'class' 'form-control mb-3'
         'placeholder': 'How far are you willing to go?',
     }))
 
-    PRICE_CHOICES = (('Choose', 'Choose'), ('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
+    PRICE_CHOICES = (('Any', 'Any'), ('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
 
     price = forms.ChoiceField(required=False, choices=PRICE_CHOICES)
 

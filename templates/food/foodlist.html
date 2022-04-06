@@ -6,9 +6,16 @@
 <!-- Search section -->
 
 <div class="communitylist">
+
+<!--     {% for object in object_list %}
+    <a href="{{ object.slug }}" class="list-group-item list-group-item-action">{{ object.name | title }}</a>
+    {% endfor %} -->
+
+
     <div class="list-section">
+        <div class="addition-button-div"><a class="btn btn-primary addition-button" href="/addition">Add a new place</a></div>
         <div class="search-bar">
-            <form method="GET">
+            <form method="GET" class="search-form-top">
                 <input type="text" name="Search">
                 <input type="submit" value="submit">
             </form>
@@ -78,7 +85,7 @@
     </div>
     </div>
 
-<a class="btn btn-primary" href="/addition">Add a new place</a>
+
 </div>
 
 {% include "base/footer.html" %}
