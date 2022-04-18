@@ -150,7 +150,7 @@
             <ul>
                 {% for objs in object_list %}
                     <li class="community_object_list">
-                        <a href="{{ objs.slug }}">{{ objs.name | title }}</a> 
+                        <a href="{{ objs.slug }}">{{ objs.name | title }} {{ objs.open_hours | title }}</a> 
                     </li>
                 {% endfor %}
             </ul> 

@@ -16,7 +16,7 @@ class SearchForm(forms.Form):
     
     CUISINE_CHOICES = (('Any', 'Any'), ('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
-        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('Taiwanese', 'Taiwanese'), ('Others', 'Others'),)
+        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Singaporean', 'Singaporean'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('French', 'French'), ('Taiwanese', 'Taiwanese'), ('Hong Kong', 'Hong Kong'), ('Others', 'Others'),)
     
     TYPE_OF_FOOD_LOCATION_CHOICES = (('Any', 'Any'), ('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant') ,('Desert', 'Desert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
@@ -72,7 +72,7 @@ class ShopForm(forms.Form):
     PRICE_CHOICES = (('Low', 'Low'),('Medium', 'Medium'),('High', 'High'),)
     CUISINE_CHOICES = (('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
-        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('Taiwanese', 'Taiwanese'), ('Others', 'Others'),)
+        ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Singaporean', 'Singaporean'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('French', 'French'), ('Taiwanese', 'Taiwanese'), ('Hong Kong', 'Hong Kong'), ('Others', 'Others'),)
     TYPE_OF_FOOD_LOCATION_CHOICES = (('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant'), ('Desert', 'Desert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
 
