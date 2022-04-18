@@ -56,7 +56,7 @@ class shop(models.Model):
 	late_hours= models.BooleanField('Opens After 11pm', default=False)
 	directions = models.CharField(max_length=100, blank = True)
 	halal = models.BooleanField('Halal', default=False)
-	open_hours = models.TextField(default='unknown')
+	# open_hours = models.TextField(default='unknown')
 	# opening_times = models.ManyToManyField(OpeningTime)
 	tags = TaggableManager()
 
