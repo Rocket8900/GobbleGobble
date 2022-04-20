@@ -49,6 +49,7 @@ class shop(models.Model):
 	address = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField(unique=True) 
 	description = models.TextField(default='nothing')
+	open_hours = models.TextField(default='unknown')
 	cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, null=True, blank=True)
 	price= models.ForeignKey(Price, on_delete=models.CASCADE, null=True, blank=True)
 	type_of_food= models.ForeignKey(Type_of_food, on_delete=models.CASCADE, null=True, blank=True)
@@ -56,8 +57,7 @@ class shop(models.Model):
 	late_hours= models.BooleanField('Opens After 11pm', default=False)
 	directions = models.CharField(max_length=100, blank = True)
 	halal = models.BooleanField('Halal', default=False)
-	# open_hours = models.TextField(default='unknown')
-	# opening_times = models.ManyToManyField(OpeningTime)
+
 	tags = TaggableManager()
 
 

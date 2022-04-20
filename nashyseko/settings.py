@@ -101,10 +101,10 @@ RECAPTCHA_SECRET_KEY = '6LfUIjoeAAAAAAj0a20CoX8NHgMrg3dAadi-RpHs'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'd7fjd7ac4kij03',
-        'USER': 'nojahymuajtoux',
-        'PASSWORD': '90fb9895b3baf50e8e3cfa24dcdbc6819ee1ed002baa45f60dea3f6cd7099694',
-        'HOST': 'ec2-3-208-121-149.compute-1.amazonaws.com',
+        'NAME': 'dc5kpki60l67ka',
+        'USER': 'zvrtxfziizlabb',
+        'PASSWORD': '5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b',
+        'HOST': 'ec2-23-20-224-166.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
