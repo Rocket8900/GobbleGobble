@@ -4,7 +4,7 @@ from django.contrib.gis.geos import Point
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.models import User
-from .utils import random_string_generator
+from .utils import random_string_generator, create_new_ref_number
 from taggit.managers import TaggableManager
 
 # WEEKDAYS = [
@@ -57,12 +57,22 @@ class shop(models.Model):
 	late_hours= models.BooleanField('Opens After 11pm', default=False)
 	directions = models.CharField(max_length=100, blank = True)
 	halal = models.BooleanField('Halal', default=False)
+	referrence_Number 	= models.CharField(
+           max_length = 10,
+           blank=True,
+           # editable=False,
+           default=create_new_ref_number
+      )
 
 	tags = TaggableManager()
 
-
 	class Meta:
 		ordering = ['name']
+
+	class Meta:
+		constraints = [
+            models.UniqueConstraint(fields=['user', 'referrence_Number'], name='user_Referrence_Number')
+        ]
 
 	# def save(self, *args, **kwargs):
 	# 	self.slug = slugify(self.name)

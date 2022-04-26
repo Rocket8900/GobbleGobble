@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import UpdateView, DeleteView, FormView, FormMixin
-
+from django.db import IntegrityError
+from django.core.exceptions import ValidationError
 import random
 
 # GEODJANGO IMPORTS
@@ -48,6 +49,9 @@ def Search(request):
 
 def Error(request):
 	return render(request, 'food/errorfinding.html')
+
+def SaveError(request):
+	return render(request, 'food/saveerror.html')
 
 def About(request):
 	return render(request, 'food/about.html')
@@ -250,6 +254,7 @@ def save_to_me(request,id):
 		directions = destination.directions
 		halal = destination.halal
 		description = destination.description
+		referrence_Number = destination.referrence_Number
 
 		slug = "{name}{randstr}".format(
 				name = new_slug,
@@ -257,8 +262,14 @@ def save_to_me(request,id):
 			)
 
 
-		ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description)
-		ins.save()
+		ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description, referrence_Number=referrence_Number)
+		try:
+			ins.save()
+		except IntegrityError as err:
+			# raise ValidationError('The pools are all full.')
+			return HttpResponseRedirect(reverse('food:saveerror'))
+
+
 
 		# return redirect('food:community_list')
 		return HttpResponseRedirect(reverse('food:community_list'))
@@ -498,6 +509,8 @@ class showform(LoginRequiredMixin, FormView):
 
 			description = self.request.POST['description']
 
+			open_hours = self.request.POST['open_hours']
+
 			directions = "http://maps.google.com/maps?z=12&t=m&q=loc:"+str(lat)+"+"+str(lon)
 
 			slug = "{name}-{randstr}".format(
@@ -505,7 +518,7 @@ class showform(LoginRequiredMixin, FormView):
 				randstr=random_string_generator(size=4)
 			)
 
-			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description)
+			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description ,open_hours=open_hours)
 			ins.save()
 			# messages.add_message(self.request, messages.SUCCESS, "Todo added successfully")
 

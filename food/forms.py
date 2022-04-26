@@ -18,7 +18,7 @@ class SearchForm(forms.Form):
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
         ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Singaporean', 'Singaporean'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('French', 'French'), ('Taiwanese', 'Taiwanese'), ('Hong Kong', 'Hong Kong'), ('Others', 'Others'),)
     
-    TYPE_OF_FOOD_LOCATION_CHOICES = (('Any', 'Any'), ('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant') ,('Desert', 'Desert'),
+    TYPE_OF_FOOD_LOCATION_CHOICES = (('Any', 'Any'), ('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant') ,('Dessert', 'Dessert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
 
 
@@ -73,7 +73,7 @@ class ShopForm(forms.Form):
     CUISINE_CHOICES = (('Indian', 'Indian'), ('Chinese', 'Chinese'),('Thai', 'Thai'),
         ('Mexican', 'Mexican'),('Western', 'Western'),('Malay', 'Malay'),('Korean', 'Korean'),
         ('Japanese', 'Japanese'),('Italian', 'Italian'), ('Indonesian', 'Indonesian'), ('Singaporean', 'Singaporean'), ('Brazilian', 'Brazilian'), ('South African', 'South African'), ('Vietnamese', 'Vietnamese'), ('French', 'French'), ('Taiwanese', 'Taiwanese'), ('Hong Kong', 'Hong Kong'), ('Others', 'Others'),)
-    TYPE_OF_FOOD_LOCATION_CHOICES = (('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant'), ('Desert', 'Desert'),
+    TYPE_OF_FOOD_LOCATION_CHOICES = (('Bar', 'Bar'), ('Beverage', 'Beverage'), ('Fast Food / Restaurant', 'Fast Food / Restaurant'), ('Dessert', 'Dessert'),
         ('Cafe', 'Cafe'),('Buffet', 'Buffet'),('Snack', 'Snack'),('Hawker', 'Hawker'),('Others', 'Others'),)
 
 
@@ -87,6 +87,7 @@ class ShopForm(forms.Form):
     type_of_food = forms.ChoiceField(required=False, choices=TYPE_OF_FOOD_LOCATION_CHOICES)
     halal = forms.BooleanField(required=False, initial=False, label='Halal')
     description = forms.CharField(required=False, label='Description', widget=forms.Textarea(attrs={"rows":5, "cols":20}))
+    open_hours = forms.CharField(required=False, label='Opening Hours', widget=forms.Textarea(attrs={"rows":2, "cols":20}))
 
     def get_point(self, address):
         outputFormat = 'json'
