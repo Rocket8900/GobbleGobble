@@ -23,6 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g'
 
+
+# AWS S3 SETTINGS
+AWS_ACCESS_KEY_ID = 'AKIA347MMUKRYJDRPN56'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'hangrysloth'
+AWS_URL = 'https://hangrysloth.s3.amazonaws.com/'
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = 'ap-southeast-1'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -38,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'django.contrib.gis',
     'food',
     'leaflet',
@@ -76,7 +88,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nashyseko.wsgi.application'
 
-GOOGLE_API_KEY = 'AIzaSyBEdIbqbG2UMbXcPLUVo8OiZzhdRdnkHyI'
+GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 
 RECAPTCHA_KEY = '6LfUIjoeAAAAABIDHagqxGUW9nKvHEm1kkfv3Cdn'
 
@@ -150,8 +162,14 @@ USE_TZ = True
 
 LOGIN_URL = 'food:login'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+AWS_LOCATION = 'static'
+STATIC_URL = AWS_URL + '/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = AWS_URL + '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -167,7 +185,7 @@ LEAFLET_CONFIG = {
     'ATTRIBUTION_PREFIX': 'Inspired by Life in GIS'
 }
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 BASE_COUNTRY = "SG"
 

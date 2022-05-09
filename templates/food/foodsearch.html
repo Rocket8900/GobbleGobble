@@ -144,8 +144,78 @@
             <p>Note: Points are displaced from their original position slightly to ensure no overlapping. If any points are overlapping, just refresh!</p>
             <ul>
                 {% for objs in object_list %}
-                    <li class="community_object_list">
-                        <a href="{{ objs.slug }}">{{ objs.name | title }} {{ objs.open_hours | title }} </a> 
+                    <li class="community_object_list_desktop">
+                        <a href="{{ objs.slug }}" class="list-group-item list-group-item-action">{{ objs.name | title }} 
+                            <br>
+                            <div class="list-bottom-desktop">
+                                <div class="list-bottom-info">
+                                    Opening hours:
+                                    <br>
+                                    {{ objs.open_hours | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Cuisine:
+                                    <br>
+                                    {{ objs.cuisine | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Price:
+                                    <br>
+
+                                    {% if objs.price == Low %}
+                                        Low pricing
+                                    {% endif %}
+                                    {{ objs.price | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Type of food:
+                                    <br>
+                                    {{ objs.type_of_food | title }}
+                                </div>
+
+
+                            </div>
+                        </a> 
+                    </li>
+
+                    <li class="community_object_list_mobile">
+                        <a href="{{ objs.slug }}" class="list-group-item list-group-item-action">{{ objs.name | title }} 
+                            <br>
+                            <div class="list-bottom-mobile">
+                                <div class="list-bottom-info">
+                                    Opening hours:
+                                    
+                                    {{ objs.open_hours | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Cuisine:
+                                    
+                                    {{ objs.cuisine | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Price:
+                                    
+
+                                    {% if objs.price == Low %}
+                                        Low pricing
+                                    {% endif %}
+                                    {{ objs.price | title }}
+                                </div>
+
+                                <div class="list-bottom-info">
+                                    Type of food:
+                                    
+                                    {{ objs.type_of_food | title }}
+                                </div>
+
+
+                            </div>
+                        </a> 
                     </li>
                 {% endfor %}
             </ul> 
