@@ -30,8 +30,8 @@ AWS_SECRET_ACCESS_KEY = 'h73o8TgIRTmnTThp307klkJLyN7jeVKxlru6kJML'
 AWS_STORAGE_BUCKET_NAME = 'hangrysloth'
 AWS_URL = 'https://hangrysloth.s3.amazonaws.com/'
 AWS_DEFAULT_ACL = None
-AWS_S3_REGION_NAME = 'ap-southeast-1'
-AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_S3_REGION_NAME = 'ap-southeast-1'
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -163,13 +163,12 @@ USE_TZ = True
 LOGIN_URL = 'food:login'
 
 
-AWS_LOCATION = 'static'
-STATIC_URL = AWS_URL + '/static/'
+STATIC_URL = 'https://hangrysloth.s3.amazonaws.com/' + '/staticfiles/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-MEDIA_URL = AWS_URL + '/media/'
+# MEDIA_URL = AWS_URL + '/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -185,7 +184,6 @@ LEAFLET_CONFIG = {
     'ATTRIBUTION_PREFIX': 'Inspired by Life in GIS'
 }
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 BASE_COUNTRY = "SG"
 
