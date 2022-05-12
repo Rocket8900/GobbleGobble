@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dotenv
-from dotenv import load_dotenv, find_dotenv
+# import dotenv
+# from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv()) 
+# load_dotenv(find_dotenv()) 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -95,11 +95,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nashyseko.wsgi.application'
 
-GOOGLE_API_KEY = os.getenv("SECRET_GOOGLE_API_KEY")
+GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 
-RECAPTCHA_KEY = os.getenv("GOOGLE_RECAPTCHA_KEY")
+# RECAPTCHA_KEY = os.getenv("GOOGLE_RECAPTCHA_KEY")
 
-RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
+# RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
 
 
@@ -194,7 +194,7 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 # SENDGRID SETTINGS
 
-SENDGRID_API_KEY = os.getenv("SECRET_SENDGRID_API_KEY")
+SENDGRID_API_KEY = 'SG.dP8Kp0SERrS7RC4XGyp6aA.LrNBB41SDJx21cMRK47YvFySRUUy6FcNvyirsfP4c7U'
 
 DEFAULT_FROM_EMAIL = 'HangrySloth Admin <admin@hangrysloth.com>'
 
