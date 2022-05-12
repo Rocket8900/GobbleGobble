@@ -4,16 +4,60 @@
 		"selected_items":
 		[
 			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"inline",
+				"inline-flex"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"just",
+				"justify-items"
+			],
+			[
 				"get",
-				"get_object_or_404"
+				"get_context_data"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"order",
+				"order_by"
+			],
+			[
+				"gree",
+				"seagreen"
 			],
 			[
 				"font",
 				"font-weight"
-			],
-			[
-				"padding",
-				"padding-right"
 			],
 			[
 				"max",
@@ -22,18 +66,6 @@
 			[
 				"backg",
 				"background-color"
-			],
-			[
-				"just",
-				"justify-items"
-			],
-			[
-				"border",
-				"border-bottom"
-			],
-			[
-				"padd",
-				"padding-bottom"
 			],
 			[
 				"save",
@@ -50,10 +82,6 @@
 			[
 				"bord",
 				"border"
-			],
-			[
-				"margin",
-				"margin-top"
 			],
 			[
 				"paddi",
@@ -98,10 +126,6 @@
 			[
 				"pa",
 				"padding-bottom"
-			],
-			[
-				"mar",
-				"margin-bottom"
 			],
 			[
 				"b",
@@ -237,390 +261,91 @@
 	[
 		{
 			"file": "staticfiles/css/main.css",
-			"redo_stack":
-			[
-				[
-					37,
-					1,
-					"insert",
-					{
-						"characters": "green"
-					},
-					"BQAAAJQpAAAAAAAAlCkAAAAAAAABAAAAbpMpAAAAAAAAkykAAAAAAAABAAAAZZIpAAAAAAAAkikAAAAAAAABAAAAZZEpAAAAAAAAkSkAAAAAAAABAAAAcpApAAAAAAAAkCkAAAAAAAABAAAAZw",
-					"AQAAAAAAAAABAAAAlSkAAAAAAACVKQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					36,
-					1,
-					"left_delete",
-					null,
-					"AgAAAJApAAAAAAAAkSkAAAAAAAAAAAAAkSkAAAAAAACXKQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAkCkAAAAAAACQKQAAAAAAAAAAAAAAAPC/"
-				]
-			],
 			"settings":
 			{
-				"buffer_size": 11878,
+				"buffer_size": 16543,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
 				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "-articles"
-					},
-					"CQAAAP0pAAAAAAAA/ikAAAAAAAAAAAAA/ikAAAAAAAD/KQAAAAAAAAAAAAD/KQAAAAAAAAAqAAAAAAAAAAAAAAAqAAAAAAAAASoAAAAAAAAAAAAAASoAAAAAAAACKgAAAAAAAAAAAAACKgAAAAAAAAMqAAAAAAAAAAAAAAMqAAAAAAAABCoAAAAAAAAAAAAABCoAAAAAAAAFKgAAAAAAAAAAAAAFKgAAAAAAAAYqAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD9KQAAAAAAAP0pAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					23,
-					1,
-					"insert",
-					{
-						"characters": "-articles"
-					},
-					"CQAAAHopAAAAAAAAeykAAAAAAAAAAAAAeykAAAAAAAB8KQAAAAAAAAAAAAB8KQAAAAAAAH0pAAAAAAAAAAAAAH0pAAAAAAAAfikAAAAAAAAAAAAAfikAAAAAAAB/KQAAAAAAAAAAAAB/KQAAAAAAAIApAAAAAAAAAAAAAIApAAAAAAAAgSkAAAAAAAAAAAAAgSkAAAAAAACCKQAAAAAAAAAAAACCKQAAAAAAAIMpAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAB6KQAAAAAAAHopAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					28,
-					1,
-					"left_delete",
-					null,
-					"AQAAAHopAAAAAAAAeikAAAAAAAAJAAAALWFydGljbGVz",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAB6KQAAAAAAAIMpAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					31,
-					2,
-					"left_delete",
-					null,
-					"AgAAAB4qAAAAAAAAHioAAAAAAAASAAAACWZvbnQtd2VpZ2h0OiA3MDA7HSoAAAAAAAAdKgAAAAAAAAEAAAAK",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAwKgAAAAAAAB4qAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					34,
-					2,
-					"left_delete",
-					null,
-					"AgAAAKkpAAAAAAAAqSkAAAAAAAAZAAAACWp1c3RpZnktY29udGVudDogY2VudGVyO6gpAAAAAAAAqCkAAAAAAAABAAAACg",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADCKQAAAAAAAKkpAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					5,
+					3,
 					1,
 					"insert",
 					{
 						"characters": "\n\n"
 					},
-					"AgAAAAUqAAAAAAAABioAAAAAAAAAAAAABioAAAAAAAAHKgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAABSoAAAAAAAAFKgAAAAAAAAAAAAAAAPC/"
+					"AgAAACxAAAAAAAAALUAAAAAAAAAAAAAALUAAAAAAAAAuQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAALEAAAAAAAAAsQAAAAAAAAAAAAAAAAPC/"
 				],
 				[
-					6,
+					4,
 					1,
 					"paste",
 					null,
-					"AQAAAAcqAAAAAAAANioAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAByoAAAAAAAAHKgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					9,
-					1,
-					"insert",
-					{
-						"characters": "tags"
-					},
-					"BQAAABUqAAAAAAAAFioAAAAAAAAAAAAAFioAAAAAAAAWKgAAAAAAAAgAAABhcnRpY2xlcxYqAAAAAAAAFyoAAAAAAAAAAAAAFyoAAAAAAAAYKgAAAAAAAAAAAAAYKgAAAAAAABkqAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAFSoAAAAAAAAdKgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					14,
-					2,
-					"left_delete",
-					null,
-					"AgAAAH0pAAAAAAAAfSkAAAAAAAAPAAAACWRpc3BsYXk6IGZsZXg7fCkAAAAAAAB8KQAAAAAAAAEAAAAK",
-					"AQAAAAAAAAABAAAAjCkAAAAAAAB9KQAAAAAAAAAAAAAAAPC/"
+					"AQAAAC5AAAAAAAAAn0AAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAALkAAAAAAAAAuQAAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		},
 		{
-			"file": "templates/food/explore.html",
+			"file": "blog/models.py",
 			"settings":
 			{
-				"buffer_size": 328,
+				"buffer_size": 1387,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
 				[
-					1,
-					1,
-					"insert",
-					{
-						"characters": " "
-					},
-					"AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					2,
-					1,
-					"left_delete",
-					null,
-					"AQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					9,
-					1,
-					"insert",
-					{
-						"characters": "Articles"
-					},
-					"CQAAAIwAAAAAAAAAjQAAAAAAAAAAAAAAjQAAAAAAAACNAAAAAAAAAAsAAABDT01JTkcgU09PTo0AAAAAAAAAjgAAAAAAAAAAAAAAjgAAAAAAAACPAAAAAAAAAAAAAACPAAAAAAAAAJAAAAAAAAAAAAAAAJAAAAAAAAAAkQAAAAAAAAAAAAAAkQAAAAAAAACSAAAAAAAAAAAAAACSAAAAAAAAAJMAAAAAAAAAAAAAAJMAAAAAAAAAlAAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACMAAAAAAAAAJcAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					12,
-					1,
-					"insert",
-					{
-						"characters": "\n<"
-					},
-					"AwAAAJkAAAAAAAAAmgAAAAAAAAAAAAAAmgAAAAAAAACbAAAAAAAAAAAAAACbAAAAAAAAAJwAAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACZAAAAAAAAAJkAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					13,
-					3,
-					"left_delete",
-					null,
-					"AwAAAJsAAAAAAAAAmwAAAAAAAAABAAAAPJoAAAAAAAAAmgAAAAAAAAABAAAACZkAAAAAAAAAmQAAAAAAAAABAAAACg",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACcAAAAAAAAAJwAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					16,
-					1,
-					"insert",
-					{
-						"characters": "-articles"
-					},
-					"CQAAAIQAAAAAAAAAhQAAAAAAAAAAAAAAhQAAAAAAAACGAAAAAAAAAAAAAACGAAAAAAAAAIcAAAAAAAAAAAAAAIcAAAAAAAAAiAAAAAAAAAAAAAAAiAAAAAAAAACJAAAAAAAAAAAAAACJAAAAAAAAAIoAAAAAAAAAAAAAAIoAAAAAAAAAiwAAAAAAAAAAAAAAiwAAAAAAAACMAAAAAAAAAAAAAACMAAAAAAAAAI0AAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACEAAAAAAAAAIQAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					30,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAKIAAAAAAAAAowAAAAAAAAAAAAAAowAAAAAAAACkAAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACiAAAAAAAAAKIAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					31,
-					1,
-					"paste",
-					null,
-					"AQAAAKQAAAAAAAAA4QAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACkAAAAAAAAAKQAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					34,
-					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAANsAAAAAAAAA3AAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADbAAAAAAAAANsAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					37,
-					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAAMkAAAAAAAAAygAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADJAAAAAAAAAMkAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					40,
-					3,
-					"left_delete",
-					null,
-					"AwAAAJEAAAAAAAAAkQAAAAAAAAARAAAAPGgxPkFydGljbGVzPC9oMT6QAAAAAAAAAJAAAAAAAAAAAQAAAAmPAAAAAAAAAI8AAAAAAAAAAQAAAAo",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACRAAAAAAAAAKIAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					43,
-					1,
-					"left_delete",
-					null,
-					"AQAAAIQAAAAAAAAAhAAAAAAAAAAJAAAALWFydGljbGVz",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACEAAAAAAAAAI0AAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					48,
-					1,
-					"insert",
-					{
-						"characters": "\n<br"
-					},
-					"BQAAAL8AAAAAAAAAwAAAAAAAAAAAAAAAwAAAAAAAAADCAAAAAAAAAAAAAADCAAAAAAAAAMMAAAAAAAAAAAAAAMMAAAAAAAAAxAAAAAAAAAAAAAAAxAAAAAAAAADFAAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC/AAAAAAAAAL8AAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					49,
-					1,
-					"insert",
-					{
-						"characters": ">"
-					},
-					"AQAAAMUAAAAAAAAAxgAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADFAAAAAAAAAMUAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					50,
-					1,
-					"insert_completion",
-					{
-						"completion": "<h1>$0</h1>",
-						"format": "snippet",
-						"keep_prefix": false,
-						"must_insert": true,
-						"trigger": "h1"
-					},
-					"AQAAAMYAAAAAAAAAzwAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADGAAAAAAAAAMYAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					51,
-					4,
-					"left_delete",
-					null,
-					"BAAAAMkAAAAAAAAAyQAAAAAAAAABAAAAPsgAAAAAAAAAyAAAAAAAAAABAAAAMccAAAAAAAAAxwAAAAAAAAABAAAAaMYAAAAAAAAAxgAAAAAAAAABAAAAPA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADKAAAAAAAAAMoAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					54,
 					5,
-					"left_delete",
-					null,
-					"BQAAAMoAAAAAAAAAygAAAAAAAAABAAAAPskAAAAAAAAAyQAAAAAAAAABAAAAMcgAAAAAAAAAyAAAAAAAAAABAAAAaMcAAAAAAAAAxwAAAAAAAAABAAAAL8YAAAAAAAAAxgAAAAAAAAABAAAAPA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADLAAAAAAAAAMsAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					55,
 					1,
 					"insert",
 					{
 						"characters": "\n"
 					},
-					"AgAAAMYAAAAAAAAAxwAAAAAAAAAAAAAAxwAAAAAAAADJAAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADGAAAAAAAAAMYAAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					3,
-					8,
-					"left_delete",
-					null,
-					"CAAAAMUAAAAAAAAAxQAAAAAAAAABAAAAPsQAAAAAAAAAxAAAAAAAAAABAAAAcsMAAAAAAAAAwwAAAAAAAAABAAAAYsIAAAAAAAAAwgAAAAAAAAABAAAAPMEAAAAAAAAAwQAAAAAAAAABAAAACcAAAAAAAAAAwAAAAAAAAAABAAAACb8AAAAAAAAAvwAAAAAAAAABAAAACr4AAAAAAAAAvgAAAAAAAAABAAAAPg",
-					"AQAAAAAAAAABAAAAxgAAAAAAAADGAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					4,
-					1,
-					"insert",
-					{
-						"characters": ">"
-					},
-					"AQAAAL4AAAAAAAAAvwAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAvgAAAAAAAAC+AAAAAAAAAAAAAAAAAPC/"
+					"AgAAAIYCAAAAAAAAhwIAAAAAAAAAAAAAhwIAAAAAAACLAgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAhgIAAAAAAACGAgAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					6,
-					3,
-					"left_delete",
-					null,
-					"AwAAAMEAAAAAAAAAwQAAAAAAAAABAAAACcAAAAAAAAAAwAAAAAAAAAABAAAACb8AAAAAAAAAvwAAAAAAAAABAAAACg",
-					"AQAAAAAAAAABAAAAwgAAAAAAAADCAAAAAAAAAAAAAAAA8HBA"
-				],
-				[
-					8,
-					1,
-					"insert",
-					{
-						"characters": "\n\n"
-					},
-					"BQAAAMcAAAAAAAAAyAAAAAAAAAAAAAAAyAAAAAAAAADJAAAAAAAAAAAAAADJAAAAAAAAAMoAAAAAAAAAAAAAAMoAAAAAAAAAywAAAAAAAAAAAAAAyAAAAAAAAADIAAAAAAAAAAEAAAAJ",
-					"AQAAAAAAAAABAAAAxwAAAAAAAADHAAAAAAAAAAAAAAAA8HBA"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAAMcAAAAAAAAAyAAAAAAAAAAAAAAAyAAAAAAAAADJAAAAAAAAAAAAAADLAAAAAAAAAMsAAAAAAAAAAQAAAAk",
-					"AQAAAAAAAAABAAAAxwAAAAAAAADHAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					16,
 					1,
 					"paste",
 					null,
-					"AQAAAMkAAAAAAAAACAEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAyQAAAAAAAADJAAAAAAAAAAAAAAAAAPC/"
+					"AQAAAIsCAAAAAAAAygIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAiwIAAAAAAACLAgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "nashyseko/settings.py",
+			"settings":
+			{
+				"buffer_size": 8964,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					2,
+					"left_delete",
+					null,
+					"AgAAANsDAAAAAAAA2wMAAAAAAAAMAAAAcHVibGljLXJlYWQn2gMAAAAAAADaAwAAAAAAAAEAAAAn",
+					"AQAAAAAAAAABAAAA2wMAAAAAAADnAwAAAAAAAAAAAAAAAPC/"
 				],
 				[
-					19,
+					4,
 					1,
 					"insert",
 					{
-						"characters": "tags"
+						"characters": "None"
 					},
-					"BQAAAOIAAAAAAAAA4wAAAAAAAAAAAAAA4wAAAAAAAADjAAAAAAAAAAgAAABhcnRpY2xlc+MAAAAAAAAA5AAAAAAAAAAAAAAA5AAAAAAAAADlAAAAAAAAAAAAAADlAAAAAAAAAOYAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA4gAAAAAAAADqAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"insert",
-					{
-						"characters": "Tags"
-					},
-					"BQAAAO8AAAAAAAAA8AAAAAAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAAgAAABBcnRpY2xlc/AAAAAAAAAA8QAAAAAAAAAAAAAA8QAAAAAAAADyAAAAAAAAAAAAAADyAAAAAAAAAPMAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA7wAAAAAAAAD3AAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					25,
-					1,
-					"insert",
-					{
-						"characters": "\n<hr"
-					},
-					"BQAAAMcAAAAAAAAAyAAAAAAAAAAAAAAAyAAAAAAAAADJAAAAAAAAAAAAAADJAAAAAAAAAMoAAAAAAAAAAAAAAMoAAAAAAAAAywAAAAAAAAAAAAAAywAAAAAAAADMAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAxwAAAAAAAADHAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					26,
-					1,
-					"insert",
-					{
-						"characters": ">"
-					},
-					"AQAAAMwAAAAAAAAAzQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAzAAAAAAAAADMAAAAAAAAAAAAAAAAAPC/"
+					"BAAAANoDAAAAAAAA2wMAAAAAAAAAAAAA2wMAAAAAAADcAwAAAAAAAAAAAADcAwAAAAAAAN0DAAAAAAAAAAAAAN0DAAAAAAAA3gMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA2gMAAAAAAADaAwAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -658,59 +383,61 @@
 	"expanded_folders":
 	[
 		"/Users/nikkiyeo/Desktop/pathfinder",
-		"/Users/nikkiyeo/Desktop/pathfinder/food",
-		"/Users/nikkiyeo/Desktop/pathfinder/food/templates",
-		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food",
-		"/Users/nikkiyeo/Desktop/pathfinder/static",
-		"/Users/nikkiyeo/Desktop/pathfinder/static/css",
-		"/Users/nikkiyeo/Desktop/pathfinder/staticfiles",
-		"/Users/nikkiyeo/Desktop/pathfinder/staticfiles/css",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/base",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration"
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko"
 	],
 	"file_history":
 	[
+		"/Users/nikkiyeo/Desktop/pathfinder/blog/admin.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/urls.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/settings.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/blog/post_list.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/blog/pagination.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/blog/views.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/blog/post_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/blog/models.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/blog/urls.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/static/css/main.css",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/shop_tag.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/requirements.txt",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/urls.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/500.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/saveerror.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/views.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/models.py",
-		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/settings.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/utils.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/community_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitylist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/food_detail.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodsearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitysearch.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/staticfiles/css/main.css",
+		"/Users/nikkiyeo/Desktop/pathfinder/food/forms.py",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/addplaces.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/nav-main.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodlist.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/home.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/contact.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/total_tags.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/explore.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/shop_tag.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/footer.html",
+		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/search.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_form.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/login.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/profile.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/food/forms.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/accounts/views.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/accounts/urls.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_reset_email.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/activation_invalid.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/404.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/500.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/403.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/account_activation_email.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/nashyseko/urls.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/privacy.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/nav-main.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/footer.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/base/main.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/staticfiles/css/main.css",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/contact.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/about.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/addplaces.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitysearch.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/.gitignore",
 		"/Users/nikkiyeo/Desktop/pathfinder/Procfile",
 		"/Users/nikkiyeo/Desktop/pathfinder/runtime.txt",
-		"/Users/nikkiyeo/Desktop/pathfinder/requirements.txt",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/food_detail.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/community_detail.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/addplaces.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/search.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodsearch.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/home.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/register.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/update.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/registration/password_change_form.html",
@@ -718,12 +445,9 @@
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/accounts/delete.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/update_form.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/shop_confirm_delete.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/foodlist.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/shop_confirm_delete.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/communitylist.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/foodlist.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/communitylist.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/templates/food/explore.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/food_detail.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/foodsearch.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/accounts/forms.py",
@@ -740,7 +464,6 @@
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/messages.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/errorfinding.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/deleteconfirm.html",
-		"/Users/nikkiyeo/Desktop/pathfinder/food/utils.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/templates/food/register.html",
 		"/Users/nikkiyeo/Desktop/pathfinder/food/admin.py",
 		"/Users/nikkiyeo/Desktop/pathfinder/static/css/search.css",
@@ -791,20 +514,11 @@
 		"/Users/nikkiyeo/Desktop/Figma/figma/website/templates/website/store.html",
 		"/Users/nikkiyeo/Desktop/Figma/figma/static/css/main.css",
 		"/Users/nikkiyeo/Desktop/Figma/figma/figma/urls.py",
-		"/Users/nikkiyeo/Desktop/Figma/figma/website/views.py",
-		"/Users/nikkiyeo/Desktop/Figma/figma/figma/settings.py",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/views.py",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/cart.html",
-		"/Users/nikkiyeo/Desktop/dev/ljw/static/js/cart.js",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/main.html",
-		"/Users/nikkiyeo/Desktop/dev/ljw_sublime.sublime-project",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/urls.py",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/store.html",
-		"/Users/nikkiyeo/Desktop/dev/ljw/store/templates/store/checkout.html"
+		"/Users/nikkiyeo/Desktop/Figma/figma/website/views.py"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -818,6 +532,65 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"min-height",
+			"community_object_list_m",
+			"community_object_list_d",
+			"community_object_list_m",
+			"community_object_list",
+			"table",
+			"detail_page_list",
+			"DETAIL_page_info",
+			".detail-desktop-map",
+			".detail_page_info",
+			"detail-desktop-map",
+			"detail_page_info",
+			"commmuity-bottom-half",
+			"community",
+			"add",
+			"community_object_list",
+			"detail_title",
+			"detail_titleo",
+			"detail_title",
+			"detail_page_list",
+			"filter-list",
+			"detail_title",
+			"detail_view_mobile",
+			"detail_view",
+			"detail_view_mobile",
+			"detail_view",
+			"1rem",
+			"table",
+			"communitylist",
+			"1rem",
+			"about-pa",
+			"about-cta",
+			"about-header",
+			"filter-list",
+			"filter-list-mobile",
+			"header-search",
+			"choose",
+			"choose\\",
+			"choose",
+			"#individual_tag_list_mobile",
+			"list_mobile",
+			"mobile\\",
+			"mobile",
+			"shop_tag_list",
+			"grid-sample",
+			"formsearch",
+			"form",
+			"communitylistview",
+			"listview",
+			"explore",
+			"context_data",
+			"context",
+			"object",
+			"explore",
+			"testing",
+			"explore",
+			"static",
+			"explore",
+			"*",
 			"explore",
 			"about",
 			"():\n",
@@ -882,19 +655,18 @@
 				{
 					"buffer": 0,
 					"file": "staticfiles/css/main.css",
-					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11878,
+						"buffer_size": 16543,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10641,
-								10647
+								16543,
+								16543
 							]
 						],
 						"settings":
@@ -904,41 +676,73 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15817.0,
+						"translation.y": 24813.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"stack_multiselect": false,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "templates/food/explore.html",
+					"file": "blog/models.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 328,
+						"buffer_size": 1387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								209,
-								209
+								714,
+								714
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 89.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "nashyseko/settings.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 475.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"stack_multiselect": false,
 					"type": "text"
 				}
@@ -1022,7 +826,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 231.0,
+	"side_bar_width": 344.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

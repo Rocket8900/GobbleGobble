@@ -78,7 +78,7 @@
 				{{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
-				<li>{{ object.description | linebreaks  }}</li>	
+				<li>{{ object.description |safe}}</li>	
 				<li>See also: <br> 
 					<div class="tag-buttons">
 						{% for tag in object.tags.all %}
@@ -168,7 +168,7 @@
 				<li>Price: {{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
-				<li>{{ object.description | linebreaks  }}</li>	
+				<li>{{ object.description |safe}}</li>	
 				<li>See also: <br> 
 					<div class="tag-buttons">
 						{% for tag in object.tags.all %}

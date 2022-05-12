@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,21 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g'
-
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # AWS S3 SETTINGS
-AWS_ACCESS_KEY_ID = 'AKIA347MMUKRYJDRPN56'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'hangrysloth'
-AWS_URL = 'https://hangrysloth.s3.amazonaws.com/'
+AWS_ACCESS_KEY_ID = os.getenv("SECRET_AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("SECRET_AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("SECRET_AWS_STORAGE_BUCKET_NAME")
+AWS_URL = os.getenv("SECRET_AWS_URL")
 AWS_DEFAULT_ACL = None
 # AWS_S3_REGION_NAME = 'ap-southeast-1'
 # AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hangrysloth.herokuapp.com', '127.0.0.1', 'www.hangrysloth.com', 'hangrysloth.com']
 
@@ -55,6 +57,9 @@ INSTALLED_APPS = [
     'leaflet',
     'accounts',
     'taggit',
+    'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -88,35 +93,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nashyseko.wsgi.application'
 
-GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
+GOOGLE_API_KEY = os.getenv("SECRET_GOOGLE_API_KEY")
 
-RECAPTCHA_KEY = '6LfUIjoeAAAAABIDHagqxGUW9nKvHEm1kkfv3Cdn'
+RECAPTCHA_KEY = os.getenv("GOOGLE_RECAPTCHA_KEY")
 
-RECAPTCHA_SECRET_KEY = '6LfUIjoeAAAAAAj0a20CoX8NHgMrg3dAadi-RpHs'
+RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'food',
-#         'USER': 'foodadmin',
-#         'PASSWORD': 'foodpass',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'dc5kpki60l67ka',
-        'USER': 'zvrtxfziizlabb',
-        'PASSWORD': '5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b',
-        'HOST': 'ec2-23-20-224-166.compute-1.amazonaws.com',
+        'NAME': os.getenv("POSTGRES_DATABASE_NAME"),
+        'USER': os.getenv("POSTGRES_DATABASE_USER"),
+        'PASSWORD': os.getenv("POSTGRES_DATABASE_PASSWORD"),
+        'HOST': os.getenv("POSTGRES_DATABASE_HOST"),
         'PORT': '5432'
     }
 }
@@ -162,12 +154,15 @@ USE_TZ = True
 
 LOGIN_URL = 'food:login'
 
+# AWS SETTINGS
 
-STATIC_URL = 'https://hangrysloth.s3.amazonaws.com/' + '/staticfiles/'
+
+STATIC_URL = AWS_URL + '/static/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# MEDIA_URL = AWS_URL + '/media/'
+MEDIA_URL = AWS_URL + '/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+MEDIA_ROOT = MEDIA_URL  
+CKEDITOR_UPLOAD_PATH= AWS_URL + "uploads/"
 
 
 # Default primary key field type
@@ -193,29 +188,89 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = "SG.dP8Kp0SERrS7RC4XGyp6aA.LrNBB41SDJx21cMRK47YvFySRUUy6FcNvyirsfP4c7U"
+
+
+# SENDGRID SETTINGS
+
+SENDGRID_API_KEY = os.getenv("SECRET_SENDGRID_API_KEY")
 
 DEFAULT_FROM_EMAIL = 'HangrySloth Admin <admin@hangrysloth.com>'
 
 
-# SENDGRID_API_KEY = os.getenv('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')
-
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
-# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
-
-# ADMINS = (
-#     ('nashwyn', 'nashwyn02@gmail.com'),
-# )
-# MANAGERS = ADMINS
 
 
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     DEBUG = False
+
+AWS_QUERYSTRING_AUTH = False
+
+CKEDITOR_CONFIGS = {
+    'default': {
+     
+        # 'skin': 'moono',
+        # # 'skin': 'office2013',
+        # 'toolbar_Basic': [
+        #     ['Source', '-', 'Bold', 'Italic']
+        # ],
+        'toolbar_Custom': [
+            {'name': 'document', 'items': ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
+            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll']},
+            {'name': 'forms',
+             'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
+                       'HiddenField']},
+            '/',
+            {'name': 'basicstyles',
+             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl',
+                       'Language']},
+            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'insert',
+             'items': ['Image', 'Youtube','Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+            '/',
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+            {'name': 'about', 'items': ['CodeSnippet']},
+            {'name': 'about', 'items': ['About']},
+            '/',  # put this to force next toolbar on new line
+            {'name': 'yourcustomtools', 'items': [
+                # put the name of your editor.ui.addButton here
+                'Preview',
+                'Maximize',
+            ]},
+        ],
+        'toolbar': 'Custom',  # put selected toolbar config here
+        'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
+        'height': 400,
+        # 'width': '100%',
+        'filebrowserWindowHeight': 725,
+        'filebrowserWindowWidth': 940,
+        'toolbarCanCollapse': True,
+        'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
+        'tabSpaces': 4,
+        'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'div',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'autogrow',
+            'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath',
+            'codesnippet',
+        ]),
+    }
+}

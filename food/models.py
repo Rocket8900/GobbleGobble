@@ -6,6 +6,8 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import random_string_generator, create_new_ref_number
 from taggit.managers import TaggableManager
+from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 # WEEKDAYS = [
 #     (1, ("Monday")),
@@ -45,10 +47,11 @@ class Type_of_food(models.Model):
 class shop(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 	name = models.CharField(max_length=100)
+	cover = models.ImageField(upload_to='cover_images/', blank = True)
 	location = models.PointField()
 	address = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField(unique=True) 
-	description = models.TextField(default='nothing')
+	description = RichTextField(default='nothing', blank = True)
 	open_hours = models.TextField(default='unknown')
 	cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, null=True, blank=True)
 	price= models.ForeignKey(Price, on_delete=models.CASCADE, null=True, blank=True)
@@ -60,11 +63,11 @@ class shop(models.Model):
 	referrence_Number 	= models.CharField(
            max_length = 10,
            blank=True,
-           # editable=False,
+           editable=False,
            default=create_new_ref_number
       )
 
-	tags = TaggableManager()
+	tags = TaggableManager(blank = True)
 
 	class Meta:
 		ordering = ['name']
