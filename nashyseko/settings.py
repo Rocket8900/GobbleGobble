@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g
 
 
 # AWS S3 SETTINGS
-AWS_ACCESS_KEY_ID = os.getenv("SECRET_AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("SECRET_AWS_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = 'AKIA347MMUKRYJDRPN56'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'hangrysloth'
 AWS_URL = 'https://hangrysloth.s3.amazonaws.com/'
 AWS_DEFAULT_ACL = None
@@ -107,10 +107,10 @@ RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.getenv("POSTGRES_DATABASE_NAME"),
-        'USER': os.getenv("POSTGRES_DATABASE_USER"),
-        'PASSWORD': os.getenv("POSTGRES_DATABASE_PASSWORD"),
-        'HOST': os.getenv("POSTGRES_DATABASE_HOST"),
+        'NAME': 'dc5kpki60l67ka',
+        'USER': 'zvrtxfziizlabb',
+        'PASSWORD': '5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b',
+        'HOST': 'ec2-23-20-224-166.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
