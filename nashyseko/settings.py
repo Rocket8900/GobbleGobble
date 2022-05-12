@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 AWS_ACCESS_KEY_ID = os.getenv("SECRET_AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("SECRET_AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = os.getenv("SECRET_AWS_STORAGE_BUCKET_NAME")
-AWS_URL = os.getenv("SECRET_AWS_URL")
+AWS_URL = 'https://hangrysloth.s3.amazonaws.com/'
 AWS_DEFAULT_ACL = None
 # AWS_S3_REGION_NAME = 'ap-southeast-1'
 # AWS_S3_SIGNATURE_VERSION = 's3v4'
@@ -157,12 +157,12 @@ LOGIN_URL = 'food:login'
 # AWS SETTINGS
 
 
-STATIC_URL = AWS_URL + '/static/'
+STATIC_URL = 'https://hangrysloth.s3.amazonaws.com/' + '/static/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-MEDIA_URL = AWS_URL + '/media/'
+MEDIA_URL = 'https://hangrysloth.s3.amazonaws.com/' + '/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_ROOT = MEDIA_URL  
-CKEDITOR_UPLOAD_PATH= AWS_URL + "uploads/"
+CKEDITOR_UPLOAD_PATH= 'https://hangrysloth.s3.amazonaws.com/' + "uploads/"
 
 
 # Default primary key field type
