@@ -129,14 +129,14 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 
 # RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
-CACHES = {
-    "default": {
-        # Your default cache
-    },
-    "collectfast": {
-        # Your dedicated Collectfast cache
-    },
-}
+# CACHES = {
+#     "default": {
+#         # Your default cache
+#     },
+#     "collectfast": {
+#         # Your dedicated Collectfast cache
+#     },
+# }
 
 COLLECTFAST_CACHE = "collectfast"
 
