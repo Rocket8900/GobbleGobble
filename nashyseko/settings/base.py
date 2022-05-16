@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "collectfast",
     'django.contrib.staticfiles',
     'storages',
     'django.contrib.gis',
@@ -128,6 +129,16 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 
 # RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
+CACHES = {
+    "default": {
+        # Your default cache
+    },
+    "collectfast": {
+        # Your dedicated Collectfast cache
+    },
+}
+
+COLLECTFAST_CACHE = "collectfast"
 
 load_dotenv(find_dotenv())
 
