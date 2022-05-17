@@ -155,7 +155,7 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 #     }
 # }
 
-DATABASES = { 'default': dj_database_url.config(conn_max_age=500) }
+DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
 
 
 
