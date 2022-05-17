@@ -144,18 +144,18 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 
 # DATABASES = {'default': dj_database_url.config(default='sqlite3:///db.sqlite', conn_max_age=600)}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': os.environ.get('POSTGRES_NAME'),
-#         'USER': os.environ.get('POSTGRES_USER'),
-#         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-#         'HOST': os.environ.get('POSTGRES_HOST'),
-#         'PORT': '5432'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': '5432'
+    }
+}
 
-DATABASES = {'default': dj_database_url.config(default='postgres://zvrtxfziizlabb:5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b@localhost/dc5kpki60l67ka')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://zvrtxfziizlabb:5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b@localhost/dc5kpki60l67ka')}
 
 
 
