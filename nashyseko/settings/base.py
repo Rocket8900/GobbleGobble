@@ -78,7 +78,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    "collectfast",
     'django.contrib.staticfiles',
     'storages',
     'django.contrib.gis',
@@ -137,8 +136,6 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 #         # Your dedicated Collectfast cache
 #     },
 # }
-
-COLLECTFAST_CACHE = "collectfast"
 
 load_dotenv(find_dotenv())
 
