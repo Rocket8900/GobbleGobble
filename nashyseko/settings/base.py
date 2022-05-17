@@ -19,7 +19,10 @@ load_dotenv(find_dotenv())
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'gciza+eo*=ds*7m$koj2p%i%aee9=b6f$bk5v67@_-)wo(mgj7'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+# 'gciza+eo*=ds*7m$koj2p%i%aee9=b6f$bk5v67@_-)wo(mgj7'
 # SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g'
 
 # AWS S3 SETTINGS
