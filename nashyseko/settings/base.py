@@ -155,7 +155,7 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
+DATABASES = {'default': dj_database_url.config(default='postgres://zvrtxfziizlabb:5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b@localhost/dc5kpki60l67ka')}
 
 
 
