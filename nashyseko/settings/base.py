@@ -21,7 +21,6 @@ load_dotenv(find_dotenv())
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-
 # 'gciza+eo*=ds*7m$koj2p%i%aee9=b6f$bk5v67@_-)wo(mgj7'
 # SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g'
 
@@ -148,10 +147,10 @@ GOOGLE_API_KEY = 'AIzaSyDtaxDxZ7qrkLjgEp1x6zWP0MSdQiv64pU'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'dc5kpki60l67ka',
-        'USER': 'zvrtxfziizlabb',
-        'PASSWORD': '5c42dec16ee7e55a916fae3d387ec7874d70df868f99244cf1aa88836827af3b',
-        'HOST': 'ec2-23-20-224-166.compute-1.amazonaws.com',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
         'PORT': '5432'
     }
 }
