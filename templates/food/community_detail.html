@@ -16,6 +16,7 @@
 
 			<style>
 	        #mapid { height: 400px; }
+	        #mapsid { height: 400px; }
 	    	</style>
 
 <div class="detail_view">
@@ -36,7 +37,7 @@
 	            <div id="mapid"></div>
 	                <!-- map js  -->
 	                <script>
-	                    var map = L.map('mapid').setView([{{ object.location.y }}, {{ object.location.x }}], 20);
+	                    var map = L.map('mapid').setView([{{ object.location.y }}, {{ object.location.x }}], 25);
 
 	                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -60,6 +61,8 @@
 	                    }).addTo(map);
 	            
 	                </script>
+
+
 		</div>
 
 		<div class="detail_page_list_desktop">
@@ -124,14 +127,11 @@
             crossorigin="">          
         </script>
 
-		<style>
-        	#mapid { height: 400px; }
-    	</style>
 
-            <div id="mapid"></div>
+            <div id="mapsid"></div>
                 <!-- map js  -->
                 <script>
-                    var map = L.map('mapid').setView([{{ object.location.y }}, {{ object.location.x }}], 20);
+                    var map = L.map('mapsid').setView([{{ object.location.y }}, {{ object.location.x }}], 20);
 
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -163,12 +163,18 @@
 			<ul class="detail_page_list">
 
 				<li class="detail_view_li"> Location: {{ object.address }}</li>
+				<li>Opening hours: {{ object.open_hours }}</li>
 				<li>Directions: <a href="{{object.directions}}" target="_blank" rel="noopener noreferrer"> Google Maps</a></li>
 				<li>Type of cuisine: {{ object.cuisine }}</li>
 				<li>Price: {{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
 				<li>{{ object.description |safe}}</li>	
+				{% if request.user.is_authenticated %}
+					<div class="tag-buttons">
+    					<button class="btn-primary"><a href="{% url 'food:save_to_me' shop.id %}">Add to my list </a></button>
+    				</div>
+				{% endif %}
 				<li>See also: <br> 
 					<div class="tag-buttons">
 						{% for tag in object.tags.all %}
@@ -182,9 +188,7 @@
 			</ul>
 
 			
-			{% if request.user.is_authenticated %}
-    			<button class="btn-primary"><a href="{% url 'food:save_to_me' shop.id %}">Add to my list </a></button>
-			{% endif %}
+			
 						
 	</div>
 </div>
