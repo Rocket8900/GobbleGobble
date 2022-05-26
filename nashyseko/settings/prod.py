@@ -9,7 +9,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'hangrysloth.herokuapp.com', 
-    'hangrysloth.com'
+    'hangrysloth.com',
+    'www.hangrysloth.com'
 ]
 
 
