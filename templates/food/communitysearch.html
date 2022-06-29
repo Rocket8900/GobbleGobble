@@ -53,6 +53,11 @@
                 </div>
 
                 <div class="form-outline form-white mb-4">
+                    <label class="form-label" >{{ form.option_of_food.label }}:</label>
+                    {{ form.option_of_food }}     
+                </div>
+
+                <div class="form-outline form-white mb-4">
                     <label class="form-label" >{{ form.randoming.label }}:</label>
                     {{ form.randoming }}     
                 </div>
@@ -174,7 +179,7 @@
                                     {% endif %}
                                     {{ objs.price | title }}
                                 </div>
-
+                                
                                 <div class="list-bottom-info">
                                     Type of food:
                                     <br>

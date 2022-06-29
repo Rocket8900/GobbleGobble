@@ -1,6 +1,6 @@
 from django.contrib import admin
 from leaflet.admin import LeafletGeoAdmin
-from food.models import shop, Cuisine, Price, Type_of_food
+from food.models import shop, Cuisine, Price, Type_of_food, Type_of_item
 from django.contrib.gis.db import models as geomodels
 from .widget import LatLongWidget
 
@@ -19,4 +19,5 @@ class ShopAdmin(admin.ModelAdmin):
 admin.site.register(Cuisine)
 admin.site.register(Price)
 admin.site.register(Type_of_food)
+admin.site.register(Type_of_item)
 

@@ -29,7 +29,7 @@ from django.contrib.auth import login
 # from django.contrib import messages
 
 from .forms import SearchForm, ShopForm, ContactForm, TagForm
-from .models import shop, Cuisine, Price, Type_of_food
+from .models import shop, Cuisine, Price, Type_of_food, Type_of_item
 from .utils import random_string_generator
 
 from django.core.mail import send_mail, BadHeaderError
@@ -182,6 +182,7 @@ class CommunityListView(FormMixin, ListView):
 		price = self.request.GET.get('price')
 		cuisine = self.request.GET.get('cuisine')
 		type_of_food = self.request.GET.get('type_of_food')
+		option_of_food = self.request.GET.get('option_of_food')
 		halal = self.request.GET.get('halal')
 		distance_limit = self.request.GET.get('distance_limit')
 		randoming = self.request.GET.get('randoming')
@@ -210,6 +211,9 @@ class CommunityListView(FormMixin, ListView):
 
 		if is_valid_queryparam(type_of_food) and type_of_food != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(type_of_food__variety=type_of_food)
+
+		if is_valid_queryparam(option_of_food) and option_of_food != 'Any':
+			kwargs['object_list'] = kwargs['object_list'].filter(type_of_item__choices=option_of_food)
 
 		kwargs['object_list'] = kwargs['object_list'].filter(location__distance_lte=(user_location, D(km=distance_limit)))
 
@@ -248,6 +252,7 @@ def save_to_me(request,id):
 		price = destination.price
 		cuisine = destination.cuisine
 		type_of_food = destination.type_of_food
+		type_of_item = destination.type_of_item
 		late_hours = destination.late_hours
 		new_slug = destination.slug
 		address = destination.address
@@ -262,7 +267,7 @@ def save_to_me(request,id):
 			)
 
 
-		ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description, referrence_Number=referrence_Number)
+		ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, type_of_item=type_of_item, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description, referrence_Number=referrence_Number)
 		try:
 			ins.save()
 		except IntegrityError as err:
@@ -406,6 +411,7 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		price = self.request.GET.get('price')
 		cuisine = self.request.GET.get('cuisine')
 		type_of_food = self.request.GET.get('type_of_food')
+		option_of_food = self.request.GET.get('option_of_food')
 		halal = self.request.GET.get('halal')
 		distance_limit = self.request.GET.get('distance_limit')
 		randoming = self.request.GET.get('randoming')
@@ -434,6 +440,9 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 
 		if is_valid_queryparam(type_of_food) and type_of_food != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(type_of_food__variety=type_of_food)
+
+		if is_valid_queryparam(option_of_food) and option_of_food != 'Any':
+			kwargs['object_list'] = kwargs['object_list'].filter(type_of_item__choices=option_of_food)
 
 
 		kwargs['object_list'] = kwargs['object_list'].filter(location__distance_lte=(user_location, D(km=distance_limit)))
@@ -507,6 +516,9 @@ class showform(LoginRequiredMixin, FormView):
 			type_of_food = self.request.POST['type_of_food']
 			type_of_food = Type_of_food.objects.get(variety=type_of_food)
 
+			type_of_item = self.request.POST['option_of_food']
+			type_of_item = Type_of_item.objects.get(choices=type_of_item)
+
 			description = self.request.POST['description']
 
 			open_hours = self.request.POST['open_hours']
@@ -518,7 +530,7 @@ class showform(LoginRequiredMixin, FormView):
 				randstr=random_string_generator(size=4)
 			)
 
-			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description ,open_hours=open_hours)
+			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, type_of_item=type_of_item, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description ,open_hours=open_hours)
 			ins.save()
 			# messages.add_message(self.request, messages.SUCCESS, "Todo added successfully")
 

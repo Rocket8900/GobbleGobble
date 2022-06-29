@@ -80,6 +80,7 @@
 					{% endif %}
 				{{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
+				<li>Type of location: {{ object.type_of_item }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
 				<li>{{ object.description |safe}}</li>	
 				<li>See also: <br> 
@@ -168,6 +169,7 @@
 				<li>Type of cuisine: {{ object.cuisine }}</li>
 				<li>Price: {{ object.price }}</li>
 				<li>Type of place: {{ object.type_of_food }}</li>
+				<li>Type of location: {{ object.type_of_item }}</li>
 				<li>Halal: {{ object.halal|yesno:"Yes,No" }}</li>
 				<li>{{ object.description |safe}}</li>	
 				{% if request.user.is_authenticated %}

@@ -44,6 +44,12 @@ class Type_of_food(models.Model):
 	def __str__(self):
 		return self.variety
 
+class Type_of_item(models.Model):
+	choices = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.choices
+
 class shop(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 	name = models.CharField(max_length=100)
@@ -55,6 +61,7 @@ class shop(models.Model):
 	open_hours = models.TextField(default='unknown')
 	cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, null=True, blank=True)
 	price= models.ForeignKey(Price, on_delete=models.CASCADE, null=True, blank=True)
+	type_of_item = models.ForeignKey(Type_of_item, on_delete=models.CASCADE, null=True, blank=True)
 	type_of_food= models.ForeignKey(Type_of_food, on_delete=models.CASCADE, null=True, blank=True)
 # REMOVE NULL = TRUE WHEN IN PRODUCTION 
 	late_hours= models.BooleanField('Opens After 11pm', default=False)
