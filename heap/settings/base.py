@@ -11,7 +11,7 @@ environ.Env.read_env()
 
 import django_on_heroku
 
-SECRET_KEY = 'django-insecure-de^a9nt!y+xav@_hq@*xb^eo^t#(c+ozl_4t85$tic#o#3pg2g'
+SECRET_KEY = os.environ['django_key']
 
 
 import os
@@ -87,16 +87,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'heap.wsgi.application'
 
-GOOGLE_API_KEY = 'AIzaSyCBw3vGdvT5c6I5fOC35vnQiCEn8LZmgLM'
+GOOGLE_API_KEY = os.environ['google_api_key']
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ['db_name'], 
-        'USER': 'postgres',
-        'PASSWORD': 'postgres123',
-        'HOST': 'heaps.cysugzh9c3nf.ap-southeast-2.rds.amazonaws.com',
+        'USER': os.environ['db_user'],
+        'PASSWORD': os.environ['db_pass'],
+        'HOST': os.environ['db_host'],
         'PORT': '5432'
     }
 }
@@ -139,23 +139,13 @@ LOGIN_URL = 'food:login'
 
 # # AWS SETTINGS
 
-
-# AWS_ACCESS_KEY_ID = 'AKIAUYQOM4YPAHHALYDY'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'heapsfinal'
-# AWS_S3_SIGNATURE_NAME = 's3v4',
-# AWS_S3_REGION_NAME = 'ap-southeast-1'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL =  None
-# AWS_S3_VERITY = True
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
 # Amazon S3 Settings
 
-AWS_ACCESS_KEY_ID = 'AKIAUYQOM4YPAHHALYDY'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'heapsfinal'
-AWS_S3_CUSTOM_DOMAIN = 'heapsfinal.s3.amazonaws.com'
+
+AWS_ACCESS_KEY_ID = os.environ['aws_access_key']
+AWS_SECRET_ACCESS_KEY = os.environ['aws_secret_key']
+AWS_STORAGE_BUCKET_NAME = os.environ['aws_bucket_name']
+AWS_S3_CUSTOM_DOMAIN = os.environ['s3_domain']
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_LOCATION = 'static'
@@ -235,7 +225,7 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
-EMAIL_HOST_PASSWORD = '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' # this is your API key
+EMAIL_HOST_PASSWORD = os.environ['email_api'] # this is your API key
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -243,7 +233,7 @@ DEFAULT_FROM_EMAIL = 'gobblegobble035@gmail.com' # this is the sendgrid email
 
 # SENDGRID SETTINGS
 
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = os.environ['email_api']
 
 DEFAULT_FROM_EMAIL = 'Gobble Gobble Admin <gobblegobble035@gmail.com>'
 
