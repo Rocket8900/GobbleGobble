@@ -3,8 +3,11 @@ Using Django 3.2.4.
 """
 from pathlib import Path
 
+
 import dj_database_url
-import django_heroku
+
+import environ
+environ.Env.read_env()
 
 import django_on_heroku
 
@@ -90,7 +93,7 @@ GOOGLE_API_KEY = 'AIzaSyCBw3vGdvT5c6I5fOC35vnQiCEn8LZmgLM'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'heaps', 
+        'NAME': os.environ['db_name'], 
         'USER': 'postgres',
         'PASSWORD': 'postgres123',
         'HOST': 'heaps.cysugzh9c3nf.ap-southeast-2.rds.amazonaws.com',
