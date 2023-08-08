@@ -1,1 +1,1 @@
-web: gunicorn heap.wsgi:application --log-file -
+web: gunicorn heap.wsgi 

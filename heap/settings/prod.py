@@ -7,9 +7,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = [
-
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Amazon S3 Settings
