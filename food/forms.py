@@ -1,7 +1,7 @@
 import json
 import urllib.parse
 import urllib.request
-
+from heap.settings.base import GOOGLE_API_KEY
 from django import forms
 from django.conf import settings
 
@@ -52,7 +52,7 @@ class SearchForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
-            'key': settings.GOOGLE_API_KEY,
+            'key': GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         print(url)
@@ -68,12 +68,9 @@ class SearchForm(forms.Form):
                         
                     }
                 except KeyError:
-                    print('ke')
                     return {}
                 except IndexError:
-                    print('index')
                     return {}
-            print('nothing')
             return {}
 
 class ShopForm(forms.Form):
@@ -104,7 +101,7 @@ class ShopForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
-            'key': settings.GOOGLE_API_KEY,
+            'key': GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         with urllib.request.urlopen(url) as response:
@@ -147,7 +144,7 @@ class TagForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + 'singapore',
-            'key': settings.GOOGLE_API_KEY,
+            'key': GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         with urllib.request.urlopen(url) as response:
