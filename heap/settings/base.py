@@ -200,8 +200,8 @@ SENDGRID_API_KEY = 'SG.C904iOssTc2hAXdzBQNe8A.P7kNkvVmfnjtqXEvfRakFU5k2iykyER6Y2
 DEFAULT_FROM_EMAIL = 'Gobble Gobble Admin <gobblegobble035@gmail.com>'
 
 
-GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
 
 
 # if os.getcwd() == '/app':
