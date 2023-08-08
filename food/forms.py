@@ -50,6 +50,7 @@ class SearchForm(forms.Form):
     randoming = forms.BooleanField(required=False, initial=False, label="I'm too indecisive for choices")
 
     def get_point(self, address):
+        print(os.environ['google_api_key'])
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
