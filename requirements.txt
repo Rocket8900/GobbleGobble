@@ -33,8 +33,6 @@ python-decouple==3.8
 python-http-client==3.3.7
 requests==2.31.0
 s3transfer==0.6.1
-sendgrid
-sendgrid-django
 six==1.16.0
 sqlparse==0.4.4
 starkbank-ecdsa==2.2.0
