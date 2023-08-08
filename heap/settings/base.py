@@ -10,11 +10,11 @@ import environ
 environ.Env.read_env()
 
 import django_on_heroku
-
+import os
 SECRET_KEY = os.environ['django_key']
 
 
-import os
+
 if os.name == 'nt':
     import platform
     OSGEO4W = r"C:\OSGeo4W"
