@@ -47,7 +47,7 @@ def accounts_register(request):
 			to_email = registerForm.cleaned_data['email']
 			send_mail(subject, message, 'gobblegobble035@gmail.com', [to_email])
 			print('email sent')  
-			return HttpResponse('registered succesfully and activation sent' )
+			return HttpResponse('Registered succesfully and activation link sent to your email. Please note that your username and password will not work until you have verified your email.' )
 
 
 	else:
