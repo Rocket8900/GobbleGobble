@@ -6,6 +6,7 @@ Deployed and accessible here: https://gobblegobble-33452308dd78.herokuapp.com/
 Using aws rds for hosting of postgreSQL db, aws s3 buckets for handling of static files and heroku for hosting of the django and backend. 
 
 Gobble Gobble is a food app that is meant to simplify the process of finding somewhere fun to eat. It does this in two different ways 
+
 Community search:
 This is a pre filled out database which allows you to search through the different food places set by the gobble gobble team. It includes a map with reference and a description along with categories. 
 
