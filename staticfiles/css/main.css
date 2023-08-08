@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	font-family: 'Lato', sans-serif;
@@ -541,7 +542,7 @@ body {
 
 .footer {
 	background-color: #413d44;
-	color: black;
+	color: white;
 	margin-bottom: -17px;
 	justify-content: space-between;
 	padding: 1.5rem 0;
@@ -735,7 +736,6 @@ color: black;
   width: 100%;
   background-color:  #e5e5e5;
   min-height: 80vh;
-  margin: 2rem 1rem;
 }
 
 .price-column {
@@ -1166,4 +1166,8 @@ article img{
 
 .featured-image-list{
     object-fit: cover;
+}
+
+.col-left {
+	border-right: 1px black solid;
 }

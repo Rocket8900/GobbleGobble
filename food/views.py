@@ -109,7 +109,7 @@ class CommunityfullListView(ListView):
 	paginate_by = 10
 
 	def get_queryset(self):
-		queryset = super().get_queryset().filter(user='2')
+		queryset = super().get_queryset().filter(user='1')
 
 		search_input = self.request.GET.get('Search') or ''
 		print(search_input)
@@ -148,7 +148,7 @@ class CommunityListView(FormMixin, ListView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		
-		context['object_list'] = context['object_list'].filter(user='2')
+		context['object_list'] = context['object_list'].filter(user='1')
 
 
 		return context
@@ -186,6 +186,9 @@ class CommunityListView(FormMixin, ListView):
 		halal = self.request.GET.get('halal')
 		distance_limit = self.request.GET.get('distance_limit')
 		randoming = self.request.GET.get('randoming')
+		object_list = shop.objects.all()
+		context = {'object_list': object_list}
+		print(context)
 
 		if point:
 			kwargs['point'] = point			
@@ -194,8 +197,8 @@ class CommunityListView(FormMixin, ListView):
    'location')
     ).order_by('distance')
 
-		else:
-			return redirect('food:error')
+		# else:
+		# 	return redirect('food:error')
 		
 		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
@@ -232,7 +235,7 @@ class CommunityDetailView(FormMixin, DetailView):
 	def get (self, *args, **kwargs):
 		person = self.get_object().user.id
 		# print(person)
-		if person == 2:
+		if person == 1:
 			return super(CommunityDetailView, self).get(*args, **kwargs)
 		else:
 		 	return redirect('food:community_list')
@@ -423,8 +426,8 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
    'location')
     ).order_by('distance')
 
-		else:
-			return redirect('food:error')
+		# else:
+		# 	return redirect('food:error')
 		
 		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
@@ -650,8 +653,8 @@ class TagListView(FormMixin, ListView):
    'location')
     ).order_by('distance')
 
-		else:
-			return redirect('food:error')
+		# else:
+		# 	return redirect('food:error')
 		
 		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)

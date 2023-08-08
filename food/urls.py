@@ -12,7 +12,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='food:login'), name='logout'),
 
     path('food/search/', views.Search, name='search'),
-    path('food/explore/', views.Explore, name='explore'),
     path('food/about/', views.About, name='about'),
     path('food/contact/', views.contact, name='contact'),
     path('food/privacy/', views.Privacy, name='privacy'),

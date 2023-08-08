@@ -3,7 +3,7 @@
  
 <div class="navigation">
     <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{% url 'food:home' %}">HangrySloth</a>
+            <a class="navbar-brand" href="{% url 'food:home' %}">Gobble Gobble</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><img src="{% static 'images/bars.png'%}" alt=""></span>
             </button>
@@ -11,9 +11,6 @@
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'food:home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'food:explore' %}">Explore</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'food:search' %}">Search</a>

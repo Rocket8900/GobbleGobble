@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .forms import RegistrationForm, UserEditForm
@@ -32,7 +32,6 @@ def accounts_register(request):
 		registerForm = RegistrationForm(request.POST)
 		if registerForm.is_valid():
 			user = registerForm.save(commit=False)
-			# user.email = registerForm.cleaned_data['email']
 			user.set_password(registerForm.cleaned_data['password'])
 			user.is_active = False
 			user.save()
@@ -46,11 +45,10 @@ def accounts_register(request):
 				'token': account_activation_token.make_token(user),
 			})
 			to_email = registerForm.cleaned_data['email']
-			send_mail(subject, message, 'admin@hangrysloth.com', [to_email])  
-			# user.email_user(subject=subject, message=message)
+			send_mail(subject, message, 'gobblegobble035@gmail.com', [to_email])
+			print('email sent')  
 			return HttpResponse('registered succesfully and activation sent' )
 
-# send_mail(subject, message, 'admin@hangrysloth.com', ['admin@hangrysloth.com']) 
 
 	else:
 		registerForm = RegistrationForm()
@@ -58,7 +56,7 @@ def accounts_register(request):
 
 def activate(request, uidb64, token):
 	try:
-		uid = force_text(urlsafe_base64_decode(uidb64))
+		uid = force_str(urlsafe_base64_decode(uidb64))
 		user = User.objects.get(pk=uid)
 	except(TypeError, ValueError, OverflowError, User.DoesNotExist):
 		user = None

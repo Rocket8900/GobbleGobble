@@ -51,23 +51,29 @@ class SearchForm(forms.Form):
     def get_point(self, address):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
-            'address': address + 'singapore',
-            'key': settings.GOOGLE_API_KEY,
+            'address': address + '+singapore',
+            'key': 'AIzaSyBnb1o3Glume0lyGwZASnDy5VP_oNDXxX4',
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
+        print(url)
         with urllib.request.urlopen(url) as response:
             body = json.loads(response.read().decode('utf-8'))
             if body['status'] == 'OK':
                 try:
+                    print(body['results'][0]['geometry']['location']['lat'])
                     return {
                         'latitude': body['results'][0]['geometry']['location']['lat'],
                         'longitude': body['results'][0]['geometry']['location']['lng'],
                         'formatted_address': body['results'][0]['formatted_address'],
+                        
                     }
                 except KeyError:
+                    print('ke')
                     return {}
                 except IndexError:
+                    print('index')
                     return {}
+            print('nothing')
             return {}
 
 class ShopForm(forms.Form):
@@ -97,7 +103,7 @@ class ShopForm(forms.Form):
     def get_point(self, address):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
-            'address': address + 'singapore',
+            'address': address + '+singapore',
             'key': settings.GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)

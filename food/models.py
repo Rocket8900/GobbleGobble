@@ -1,30 +1,12 @@
 from django.db import models
 from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
-from django.urls import reverse
-from django.utils.text import slugify
 from django.contrib.auth.models import User
-from .utils import random_string_generator, create_new_ref_number
+from .utils import create_new_ref_number
 from taggit.managers import TaggableManager
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
 
-# WEEKDAYS = [
-#     (1, ("Monday")),
-#     (2, ("Tuesday")),
-#     (3, ("Wednesday")),
-#     (4, ("Thursday")),
-#     (5, ("Friday")),
-#     (6, ("Saturday")),
-#     (7, ("Sunday")),
-#  ]
-# class OpeningTime(models.Model):
-
-#     weekday = models.IntegerField(
-#         choices=WEEKDAYS,
-#         unique=True)
-#     from_hour = models.TimeField()
-#     to_hour = models.TimeField()
 
 class Cuisine(models.Model):
 	options = models.CharField(max_length=100)
@@ -53,7 +35,6 @@ class Type_of_item(models.Model):
 class shop(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 	name = models.CharField(max_length=100)
-	cover = models.ImageField(upload_to='cover_images/', blank = True)
 	location = models.PointField()
 	address = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField(unique=True) 
@@ -74,7 +55,6 @@ class shop(models.Model):
            default=create_new_ref_number
       )
 
-	tags = TaggableManager(blank = True)
 
 	class Meta:
 		ordering = ['name']
@@ -84,42 +64,6 @@ class shop(models.Model):
             models.UniqueConstraint(fields=['user', 'referrence_Number'], name='user_Referrence_Number')
         ]
 
-	# def save(self, *args, **kwargs):
-	# 	self.slug = slugify(self.name)
-	# 	super(shop, self).save(*args, **kwargs)
 
 	def _str_(self):
 		return self.name
-
-	# def unique_slug_generator(instance, new_slug=None):
-
-	# 	if new_slug is not None:
-	# 		slug = new_slug
-	# 	else:
-	# 		slug = slugify(instance.name)
-
-	# 	Klass = instance.__class__
-	# 	qs_exists = Klass.objects.filter(slug=slug).exists()
-	# 	if qs_exists:
-	# 		new_slug = "{slug}-{randstr}".format(
-	# 				slug=slug,
-	# 				randstr=random_string_generator(size=4)
-	# 			)
-	# 	return unique_slug_generator(instance, new_slug=new_slug)
-	# 	return slug
-
-	# def unique_slug_generator(self, *args, **kwargs):
-
-	# 	new_slug = "{self.name}-{randstr}".format(
-	# 				slug=self.name,
-	# 				randstr=random_string_generator(size=4)
-	# 			)
-
-	# 	self.slug = slugify(new_slug)
-	# 	super(shop, self).save(*args, **kwargs)
-		
-
-	# def get_absolute_url(self):
-	# 	return reverse('food:food_detail', args=[self.slug])
-
-
