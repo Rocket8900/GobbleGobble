@@ -6,6 +6,10 @@ from pathlib import Path
 import dj_database_url
 import django_heroku
 
+import django_on_heroku
+
+
+
 import os
 if os.name == 'nt':
     import platform
@@ -277,3 +281,5 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+django_on_heroku.settings(locals())
