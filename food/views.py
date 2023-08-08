@@ -71,8 +71,6 @@ def handler404(request, exception):
 def handler500(request):
     return render(request, 'food/500.html', status=500)
 
-# def handler403(request):
-#     return render(request, 'food/403.html', status=403)
 
 # LOGIN SECTION
 
@@ -112,7 +110,7 @@ class CommunityfullListView(ListView):
 		queryset = super().get_queryset().filter(user='1')
 
 		search_input = self.request.GET.get('Search') or ''
-		print(search_input)
+
 		if search_input:
 			queryset = queryset.filter(name__icontains=search_input)
 			
@@ -120,14 +118,14 @@ class CommunityfullListView(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		# print(context)
+
 
 		paginator = context['paginator']
 		page_numbers_range = 10  # Display 5 page numbers
 		max_index = len(paginator.page_range)
 
 		page = self.request.GET.get('page')
-		# print (self.request)
+
 		current_page = int(page) if page else 1
 
 		start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
@@ -168,14 +166,14 @@ class CommunityListView(FormMixin, ListView):
 		kwargs = super().get_form_kwargs()
 		if self.request.method == 'GET' and self.request.GET:
 			kwargs['data'] = self.request.GET
-		# if 'random' in self.request.POST:
-		# 	print('this is random')
+
+
 		return kwargs
 
 	def form_valid(self, form):
 		kwargs = {
 			'query': form.cleaned_data['address'],
-		#	'radius': form.cleaned_data['Number_of_places_nearby'], 
+
 		}
 		point = form.get_point(kwargs['query'])
 		late_hours = self.request.GET.get('late_hours')
@@ -188,7 +186,7 @@ class CommunityListView(FormMixin, ListView):
 		randoming = self.request.GET.get('randoming')
 		object_list = shop.objects.all()
 		context = {'object_list': object_list}
-		print(context)
+
 
 		if point:
 			kwargs['point'] = point			
@@ -197,8 +195,7 @@ class CommunityListView(FormMixin, ListView):
    'location')
     ).order_by('distance')
 
-		# else:
-		# 	return redirect('food:error')
+
 		
 		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
@@ -234,7 +231,7 @@ class CommunityDetailView(FormMixin, DetailView):
 
 	def get (self, *args, **kwargs):
 		person = self.get_object().user.id
-		# print(person)
+
 		if person == 1:
 			return super(CommunityDetailView, self).get(*args, **kwargs)
 		else:
@@ -242,11 +239,9 @@ class CommunityDetailView(FormMixin, DetailView):
 
 def save_to_me(request,id):
 	user = request.user
-	# places = shop.objects.all()
-	# place_name = places.name
-	# print(place_name)
+
 	destination = get_object_or_404(shop, id=id)
-	# print(destination)
+
 	if user == '':
 		return redirect('communitylist/')
 	else:
@@ -274,14 +269,14 @@ def save_to_me(request,id):
 		try:
 			ins.save()
 		except IntegrityError as err:
-			# raise ValidationError('The pools are all full.')
+
 			return HttpResponseRedirect(reverse('food:saveerror'))
 
 
 
 		# return redirect('food:community_list')
 		return HttpResponseRedirect(reverse('food:community_list'))
-		# return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
 
 # PERSONAL LIST SECTION
 
@@ -294,7 +289,7 @@ class AllListView(LoginRequiredMixin, ListView):
 		queryset = super().get_queryset().filter(user=self.request.user)
 
 		search_input = self.request.GET.get('Search') or ''
-		print(search_input)
+
 		if search_input:
 			queryset = queryset.filter(name__icontains=search_input)
 			
@@ -302,14 +297,14 @@ class AllListView(LoginRequiredMixin, ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		# print(context)
+
 
 		paginator = context['paginator']
 		page_numbers_range = 10  # Display 5 page numbers
 		max_index = len(paginator.page_range)
 
 		page = self.request.GET.get('page')
-		# print (self.request)
+
 		current_page = int(page) if page else 1
 
 		start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
@@ -327,48 +322,17 @@ class FoodDetailView(FormMixin, DetailView):
 	template_name = 'food/food_detail.html'
 	form_class = SearchForm
 
-	# def get_context_data(self, **kwargs):
-	# 	context['previous'] = self.request.META.get('HTTP_REFERER', reverse('food:food_list'))
-	# 	return context
+
 
 	def get (self, *args, **kwargs):
 		user = self.request.user.id
 		person = self.get_object().user.id
-		print(user)
-		print(person)
-		if person == 2:
-			print('nice person is 2')
-		if user == person or person == 2:
+
+		if user == person or person == 1:
 			return super(FoodDetailView, self).get(*args, **kwargs)
 		else:
 			return redirect('food:food_list')
 
-	# def form_valid(self, form):
-	# 	kwargs = {
-	# 		'query': form.cleaned_data['address'],
-	# 	}
-	# 	point = form.get_point(kwargs['query'])
-
-	# 	if point:
-	# 		kwargs['point'] = point			
-	# 		location_position = Point(point['formatted_address'])
-	# 		print(location_position)
-	# 		kwargs['object_list'] = super().get_queryset().annotate(distance=Distance(user_location,
- #  			'location')
- #    		).order_by('distance')
-
-	# 	return self.render_to_response(self.get_context_data(**kwargs))
-
-
-	# def get_context_data(self, **kwargs):
-	# 	context = super().get_context_data(**kwargs)
-	# 	context['object_list'] = context['object_list'].filter(user=self.request.user)
-
-	# 	# search_input = self.request.GET.get('Search') or ''
-	# 	# if search_input:
-	# 	# 	context['object_list'] = context['object_list'].filter(name__icontains=search_input)
-
-	# 	return context
 
 class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 	model = shop
@@ -379,9 +343,7 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		context = super().get_context_data(**kwargs)
 		context['object_list'] = context['object_list'].filter(user=self.request.user)
 
-		# search_input = self.request.GET.get('Search') or ''
-		# if search_input:
-		# 	context['object_list'] = context['object_list'].filter(name__icontains=search_input)
+
 
 		return context
 
@@ -400,14 +362,12 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		kwargs = super().get_form_kwargs()
 		if self.request.method == 'GET' and self.request.GET:
 			kwargs['data'] = self.request.GET
-		# if 'random' in self.request.POST:
-		# 	print('this is random')
+
 		return kwargs
 
 	def form_valid(self, form):
 		kwargs = {
 			'query': form.cleaned_data['address'],
-		#	'radius': form.cleaned_data['Number_of_places_nearby'], 
 		}
 		point = form.get_point(kwargs['query'])
 		late_hours = self.request.GET.get('late_hours')
@@ -426,8 +386,6 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
    'location')
     ).order_by('distance')
 
-		# else:
-		# 	return redirect('food:error')
 		
 		if is_valid_queryparam(price) and price != 'Any':
 			kwargs['object_list'] = kwargs['object_list'].filter(price__costs=price)
@@ -453,9 +411,6 @@ class FoodListView(LoginRequiredMixin, FormMixin, ListView):
 		if randoming == 'on':
 			randomised_list = kwargs['object_list'].order_by('?').first()
 			kwargs['object_list'] = kwargs['object_list'].filter(name__icontains=randomised_list.name)
-			# kwargs['object_list'] = kwargs['object_list'].filter(randomised_list)
-			# for i in range(1):
-			# 	kwargs['object_list'] = random.choice(kwargs['object_list'])
 				
 		kwargs['object_list'] = kwargs['object_list']
 		return self.render_to_response(self.get_context_data(**kwargs))
@@ -534,9 +489,8 @@ class showform(LoginRequiredMixin, FormView):
 			)
 			
 			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, type_of_item=type_of_item, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description ,open_hours=open_hours)
-			print(ins)
+
 			ins.save()
-			# messages.add_message(self.request, messages.SUCCESS, "Todo added successfully")
 
 		else:
 			print('cant retrieve the point')

@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 from food import views
 
-# handler403 = views.handler403
+
 handler404 = views.handler404
 handler500 = views.handler500
 

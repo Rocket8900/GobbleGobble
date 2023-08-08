@@ -8,7 +8,6 @@ app_name = 'food'
 
 urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
-    # path('register/', RegisterPage.as_view(), name='register'),
     path('logout/', LogoutView.as_view(next_page='food:login'), name='logout'),
 
     path('food/search/', views.Search, name='search'),
@@ -25,7 +24,6 @@ urlpatterns = [
     path('communitylist/<slug>/', CommunityDetailView.as_view(), name='community_detail'),
     path('save/<int:id>/', views.save_to_me, name='save_to_me'),
 
-    # path('addition', views.showform, name='addition'),
     path('addition', showform.as_view(), name='addition'),
     path('food-update/<slug>/', FoodUpdate.as_view(), name='food-update'),
     path('food-delete/<slug>/', DeleteView.as_view(), name='food-delete'),

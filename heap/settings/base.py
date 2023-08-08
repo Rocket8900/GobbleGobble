@@ -160,8 +160,6 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
-# AWS_S3_REGION = 'ap-southeast-1'
-# AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 CKEDITOR_UPLOAD_PATH= f'https://{AWS_S3_CUSTOM_DOMAIN}/uploads/'
 
@@ -224,12 +222,12 @@ LOGOUT_URL = 'logout'
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
-EMAIL_HOST_PASSWORD = os.environ['email_api'] # this is your API key
+EMAIL_HOST_USER = 'apikey' 
+EMAIL_HOST_PASSWORD = os.environ['email_api'] 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'gobblegobble035@gmail.com' # this is the sendgrid email
+DEFAULT_FROM_EMAIL = 'gobblegobble035@gmail.com' 
 
 # SENDGRID SETTINGS
 
@@ -242,10 +240,6 @@ GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
 
 
-# if os.getcwd() == '/app':
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#     SECURE_SSL_REDIRECT = True
-#     DEBUG = False
 
 
 

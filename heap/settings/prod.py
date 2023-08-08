@@ -12,18 +12,6 @@ ALLOWED_HOSTS = ['*']
 
 # Amazon S3 Settings
 
-AWS_ACCESS_KEY_ID = 'AKIAUYQOM4YPAHHALYDY'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'heapsfinal'
-AWS_S3_CUSTOM_DOMAIN = 'heapsfinal.s3.amazonaws.com'
-AWS_DEFAULT_ACL = 'public-read'
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-AWS_LOCATION = 'static'
-AWS_QUERYSTRING_AUTH = False
-AWS_HEADERS = {
-    'Access-Control-Allow-Origin':'*',
-}
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
@@ -65,8 +53,3 @@ LOGGING = {
         },
     }
 }
-
-
-# Heroku Settings
-# django_on_heroku.settings(locals(), staticfiles=False)
-# del DATABASES['default']['OPTIONS']['sslmode']
