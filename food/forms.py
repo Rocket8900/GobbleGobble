@@ -104,7 +104,7 @@ class ShopForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
-            'key': settings.GOOGLE_API_KEY,
+            'key': 'AIzaSyBnb1o3Glume0lyGwZASnDy5VP_oNDXxX4',
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         with urllib.request.urlopen(url) as response:
@@ -164,11 +164,4 @@ class TagForm(forms.Form):
                 except IndexError:
                     return {}
             return {}
-
-
-class ContactForm(forms.Form):
-    first_name = forms.CharField(max_length = 50)
-    last_name = forms.CharField(max_length = 50)
-    email_address = forms.EmailField(max_length = 150)
-    message = forms.CharField(widget = forms.Textarea, max_length = 2000)
 

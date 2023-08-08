@@ -532,8 +532,9 @@ class showform(LoginRequiredMixin, FormView):
 				name = name,
 				randstr=random_string_generator(size=4)
 			)
-
+			
 			ins = shop(user=user, name=name, location=location, price=price, cuisine=cuisine, type_of_food=type_of_food, type_of_item=type_of_item, late_hours=late_hours, slug=slug, address=address, directions=directions, halal=halal, description=description ,open_hours=open_hours)
+			print(ins)
 			ins.save()
 			# messages.add_message(self.request, messages.SUCCESS, "Todo added successfully")
 
@@ -547,14 +548,4 @@ class showform(LoginRequiredMixin, FormView):
 
 		return super(showform, self).form_valid(form)
 
-
-
-# def shop_list(request, tag_slug=None):
-# 	shop = shop.objects.all()
-# 	tag = None
-# 	if tag_slug:
-# 		tag=get_object_or_404(Tag, slug=tag_slug)
-# 		shop=shop.filter(tags__in=[tag])
-
-# 	return render(request,'food/shop_tag.html', {'shop':shop,'tag':tag})
 
