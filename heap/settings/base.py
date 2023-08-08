@@ -230,6 +230,14 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = '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' # this is your API key
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'gobblegobble035@gmail.com' # this is the sendgrid email
+
 # SENDGRID SETTINGS
 
 SENDGRID_API_KEY = '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'
