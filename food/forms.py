@@ -50,19 +50,16 @@ class SearchForm(forms.Form):
     randoming = forms.BooleanField(required=False, initial=False, label="I'm too indecisive for choices")
 
     def get_point(self, address):
-        print(os.environ['google_api_key'])
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
             'key': os.environ['google_api_key'],
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
-        print(url)
         with urllib.request.urlopen(url) as response:
             body = json.loads(response.read().decode('utf-8'))
             if body['status'] == 'OK':
                 try:
-                    print(body['results'][0]['geometry']['location']['lat'])
                     return {
                         'latitude': body['results'][0]['geometry']['location']['lat'],
                         'longitude': body['results'][0]['geometry']['location']['lng'],
