@@ -52,7 +52,7 @@ class SearchForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
-            'key': 'AIzaSyBnb1o3Glume0lyGwZASnDy5VP_oNDXxX4',
+            'key': settings.GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         print(url)
@@ -104,7 +104,7 @@ class ShopForm(forms.Form):
         outputFormat = 'json'
         parameters = urllib.parse.urlencode({
             'address': address + '+singapore',
-            'key': 'AIzaSyBnb1o3Glume0lyGwZASnDy5VP_oNDXxX4',
+            'key': settings.GOOGLE_API_KEY,
         })
         url = 'https://maps.googleapis.com/maps/api/geocode/%s?%s' % (outputFormat, parameters)
         with urllib.request.urlopen(url) as response:
