@@ -13,7 +13,6 @@ urlpatterns = [
 
     path('food/search/', views.Search, name='search'),
     path('food/about/', views.About, name='about'),
-    path('food/contact/', views.contact, name='contact'),
     path('food/privacy/', views.Privacy, name='privacy'),
 
 	path('', views.Home, name='home'),
@@ -33,7 +32,4 @@ urlpatterns = [
     path('error/', views.Error, name='error'),
     path('saveerror/', views.SaveError, name='saveerror'),
 
-    # path('tag/<slug:tag_slug>', views.shop_list, name='shop_by_tag'),
-    path('tag/<slug>', TagListView.as_view(), name='shop_by_tag'),
-    path('tags', TotalTags.as_view(), name='total_tags'),
     ]
