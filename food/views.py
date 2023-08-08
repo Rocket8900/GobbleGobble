@@ -28,7 +28,7 @@ from django.contrib.auth import login
 
 # from django.contrib import messages
 
-from .forms import SearchForm, ShopForm, ContactForm, TagForm
+from .forms import SearchForm, ShopForm
 from .models import shop, Cuisine, Price, Type_of_food, Type_of_item
 from .utils import random_string_generator
 
