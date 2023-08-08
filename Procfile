@@ -1,1 +1,1 @@
-web: gunicorn nashyseko.wsgi --log-file -
+web: gunicorn heap.wsgi --log-file -
