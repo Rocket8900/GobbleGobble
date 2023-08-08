@@ -14,7 +14,7 @@ import os
 SECRET_KEY = os.environ['django_key']
 
 
-
+DEBUG = False
 if os.name == 'nt':
     import platform
     OSGEO4W = r"C:\OSGeo4W"
