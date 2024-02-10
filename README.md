@@ -1,4 +1,4 @@
-"Heaps G10 final submission"
+Personal project food app 
 
 Gobble Gobble food app. 
 Deployed and accessible here: https://gobblegobble-33452308dd78.herokuapp.com/
